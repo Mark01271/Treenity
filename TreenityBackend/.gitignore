@@ -1,23 +1,17 @@
-HELP.md
+### Compilati da Maven o Gradle ###
 target/
+build/
+
+### Escludi Maven Wrapper non necessario ###
 !.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
+### Escludi IDE non Eclipse ###
 .idea
 *.iws
 *.iml
 *.ipr
+
+.vscode/
 
 ### NetBeans ###
 /nbproject/private/
@@ -25,9 +19,6 @@ target/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
-.vscode/
+### Spring Tool Suite cache ###
+.sts4-cache
