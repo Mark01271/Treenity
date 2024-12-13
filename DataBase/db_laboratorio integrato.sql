@@ -11,6 +11,16 @@ CREATE TABLE IF NOT EXISTS Admins (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- Timestamp when the admin account is created
 );
 
+-- Table for Request Logs
+CREATE TABLE IF NOT EXISTS Request_Logs (
+  id INT PRIMARY KEY AUTO_INCREMENT, -- Unique identifier for each log entry
+  updated_by INT NOT NULL, -- Admin responsible for the update
+  status ENUM('received', 'in_progress', 'completed', 'archived') NOT NULL, -- Status at the time of update
+  comment TEXT, -- Optional comment explaining the update
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- Timestamp of the log entry
+  FOREIGN KEY (updated_by) REFERENCES Admins(id) -- Link to the Admins table
+);
+
 -- Table for Info Requests
 CREATE TABLE IF NOT EXISTS Info_Requests (
   id INT PRIMARY KEY AUTO_INCREMENT, -- Unique identifier for each request
@@ -28,7 +38,7 @@ CREATE TABLE IF NOT EXISTS Info_Requests (
   status ENUM('received', 'in_progress', 'completed', 'archived') DEFAULT 'received', -- Request status
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Timestamp of creation
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- Last update timestamp
-  FOREIGN KEY (request_log_id) REFERENCES Request_Logs(id) -- Link to Request Logs
+  FOREIGN KEY (request_log_id) REFERENCES Request_Logs(id) ON DELETE CASCADE -- Link to Request Logs with cascading delete
 );
 
 -- Table for Appointment Requests
@@ -50,15 +60,5 @@ CREATE TABLE IF NOT EXISTS Appointment_Requests (
   status ENUM('received', 'in_progress', 'completed', 'archived') DEFAULT 'received', -- Request status
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Timestamp of creation
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- Last update timestamp
-  FOREIGN KEY (request_log_id) REFERENCES Request_Logs(id) -- Link to Request Logs
-);
-
--- Table for Request Logs
-CREATE TABLE IF NOT EXISTS Request_Logs (
-  id INT PRIMARY KEY AUTO_INCREMENT, -- Unique identifier for each log entry
-  updated_by INT NOT NULL, -- Admin responsible for the update
-  status ENUM('received', 'in_progress', 'completed', 'archived') NOT NULL, -- Status at the time of update
-  comment TEXT, -- Optional comment explaining the update
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- Timestamp of the log entry
-  FOREIGN KEY (updated_by) REFERENCES Admins(id) -- Link to the Admins table
+  FOREIGN KEY (request_log_id) REFERENCES Request_Logs(id) ON DELETE CASCADE -- Link to Request Logs with cascading delete
 );
