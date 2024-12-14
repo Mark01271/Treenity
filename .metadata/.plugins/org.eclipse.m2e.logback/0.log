@@ -1,0 +1,12 @@
+2024-12-14 15:32:44,389 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-12-14 15:32:49,281 [Worker-2: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.TreenityBackend:TreenityBackend:0.0.1-SNAPSHOT @ C:\Users\ICTS23-25.146\Desktop\Treenity\TreenityBackend\pom.xml.
+2024-12-14 15:32:50,321 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-12-14 15:32:50,342 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-12-14 15:32:50,383 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ICTS23-25.146\Desktop\Treenity\TreenityBackend\src\test\resources
+2024-12-14 15:32:53,280 [Worker-12: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.TreenityBackend:TreenityBackend:0.0.1-SNAPSHOT @ C:\Users\ICTS23-25.146\Desktop\Treenity\TreenityBackend\pom.xml.
+2024-12-14 15:33:42,019 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-12-14 15:33:42,032 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-12-14 15:33:42,035 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ICTS23-25.146\Desktop\Treenity\TreenityBackend\src\test\resources
+2024-12-14 15:37:00,715 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-12-14 15:37:00,719 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-12-14 15:37:00,722 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ICTS23-25.146\Desktop\Treenity\TreenityBackend\src\test\resources
