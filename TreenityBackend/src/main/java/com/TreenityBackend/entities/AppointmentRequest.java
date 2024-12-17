@@ -29,7 +29,7 @@ public class AppointmentRequest {
     private Integer id;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "request_log_id", referencedColumnName = "id", onDelete = ReferentialAction.CASCADE)
+    @JoinColumn(name = "request_log_id")
     private RequestLog requestLog;
 
     @Column(nullable = false)
