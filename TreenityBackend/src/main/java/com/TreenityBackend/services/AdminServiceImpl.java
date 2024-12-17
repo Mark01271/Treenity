@@ -29,18 +29,22 @@ public class AdminServiceImpl implements AdminService, UserDetailsService {
     @Override
     public UserDetails loadAdminByUsername(String username) throws UsernameNotFoundException {
         System.out.println("Tentativo di login con: " + username);
-        /*
+        
         Optional<Admin> adminOpt = AdminDAO.findByUsername(username);
 
-        if(adminOpt.isPresent()) { //controlla se l`utente è presente
+        //controlla se l`utente è presente
+        if(adminOpt.isPresent()) { 
             Admin admin = adminOpt.get();
+            
+            // non so come funzionano get e set in lombok
+            
             System.out.println("Utente trovato: " + admin.getUsername());
             return new org.springframework.security.core.userdetails.Admin(admin.getUsername(), admin.getPassword(), new ArrayList<>());
         } else {
             System.out.println("Utente non trovato con username: " + username);
             throw new UsernameNotFoundException("Utente non trovato con username o email: " + username);
         }
-        */
+        
     }
     
     // Registra nuovo utente controllando se username o email esistono già
