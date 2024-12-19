@@ -7,12 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import com.TreenityBackend.entities.StatusEntity;
 
-import ch.qos.logback.core.status.Status;
 
 @Repository
-public interface StatusDAO extends JpaRepository<StatusEntity, Integer> {
+public interface StatusEntityDAO extends JpaRepository<StatusEntity, Integer> {
 	// Trova uno status per nome (es. RECEIVED, IN_PROGRESS, etc.)
-    Optional<Status> findByName(StatusEntity.StatusName name);
+    Optional<StatusEntity> findByName(StatusEntity.StatusName name);
 
     // Controlla se esiste uno status con un determinato nome
     boolean existsByName(StatusEntity.StatusName name);
