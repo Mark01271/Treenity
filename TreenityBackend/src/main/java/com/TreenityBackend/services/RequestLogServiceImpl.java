@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class RequestLogServiceImpl implements RequestLogService {
-    private final RequestLogDAO requestLogDao;
+    private RequestLogDAO requestLogDao;
 
     @Override
     public List<RequestLog> getAllLogs() {
