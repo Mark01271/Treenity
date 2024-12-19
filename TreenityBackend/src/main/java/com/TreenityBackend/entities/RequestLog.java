@@ -32,7 +32,7 @@ public class RequestLog {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "status_id", referencedColumnName = "id")
-    private Status status;
+    private StatusEntity status;
 
     private String comment;
 
