@@ -62,6 +62,10 @@ public class InfoRequest {
     @Builder.Default
     private Boolean newsletter = false;
     
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "status_id")
+    private StatusEntity status;
+    
     @Builder.Default
     @Column(nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime createdAt = LocalDateTime.now();
