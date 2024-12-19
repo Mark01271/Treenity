@@ -58,11 +58,13 @@ public class InfoRequest {
 
     @Column(nullable = false)
     private Boolean consentForm;
-
+    
+    @Builder.Default
     private Boolean newsletter = false;
-
+    
+    @Builder.Default
     @Column(nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    final private LocalDateTime createdAt = LocalDateTime.now();
+    private LocalDateTime createdAt = LocalDateTime.now();
 
     public enum GroupType {
         SCUOLA, SCOUT, FAMIGLIA, GRUPPI_PARROCCHIALI, GRUPPO_EVENTI, ORGANIZZAZIONI, ALTRO
