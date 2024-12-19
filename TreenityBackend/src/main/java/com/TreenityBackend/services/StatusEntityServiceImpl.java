@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class StatusEntityServiceImpl implements StatusEntityService {
-    private final StatusEntityDAO statusEntityDao;
+    private StatusEntityDAO statusEntityDao;
 
     @Override
     public List<StatusEntity> getAllStatuses() {
