@@ -6,32 +6,32 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.TreenityBackend.entities.StatusEntity;
-import com.TreenityBackend.repos.StatusDAO;
+import com.TreenityBackend.repos.StatusEntityDAO;
 
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
 public class StatusEntityServiceImpl implements StatusEntityService {
-    private final StatusDAO statusDao;
+    private final StatusEntityDAO statusEntityDao;
 
     @Override
     public List<StatusEntity> getAllStatuses() {
-        return statusDao.findAll();
+        return statusEntityDao.findAll();
     }
 
     @Override
     public Optional<StatusEntity> getStatusById(Integer id) {
-        return statusDao.findById(id);
+        return statusEntityDao.findById(id);
     }
 
     @Override
     public Optional<StatusEntity> getStatusByName(StatusEntity.StatusName name) {
-        return statusDao.findByName(name);
+        return statusEntityDao.findByName(name);
     }
 
     @Override
     public StatusEntity saveStatus(StatusEntity statusEntity) {
-        return statusDao.save(statusEntity);
+        return statusEntityDao.save(statusEntity);
     }
 }
