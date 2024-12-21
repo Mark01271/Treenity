@@ -19,15 +19,23 @@ public class SecurityConfig {
     }
     
     //per ora autorizza tutti e ignora i token CSRF per ogni richiesta
-    //DA MODIFICARE UNA VOLTA CREATO BACKOFFICE
+    //TODO: gestire autenticazione admin e gestione CSFR una volta creato backoffice
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(authorize -> authorize
                 .anyRequest().permitAll() // Consente l'accesso a tutte le richieste
             )
             .csrf(csrf -> csrf
-                    .ignoringRequestMatchers("/**") // Ignora CSRF per tutte le richieste, da gestire una volta creato backoffice
-                );
+                    .ignoringRequestMatchers("/**") // Ignora CSRF per ora, da gestire in seguito
+                )
+            //disabilitata per ora per test, da gestire, aggiunta commentata una possibile soluzione iniziale            
+            //TODO: gestire la sicurezza degli headers HTTP
+            .headers(headers -> headers.disable());
+/*            .headers(headers -> headers
+                    .addHeaderWriter((request, response) -> {
+                        response.addHeader("Content-Security-Policy", "frame-ancestors 'self';"); // Consente iframe solo sullo stesso dominio
+                    })
+                );  */
         return http.build();
     }
 	
