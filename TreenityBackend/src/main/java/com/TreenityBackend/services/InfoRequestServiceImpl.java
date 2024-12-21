@@ -12,10 +12,9 @@ import com.TreenityBackend.repos.InfoRequestDAO;
 @RequiredArgsConstructor
 public class InfoRequestServiceImpl implements InfoRequestService {
 
-    private final InfoRequestDAO infoRequestDAO;
+    private InfoRequestDAO infoRequestDAO;
     
-    // boh
-    private final JavaMailSender mailSender;
+    private JavaMailSender mailSender;
 
     @Override
     public InfoRequest saveAndSendEmail(InfoRequest infoRequest) {
