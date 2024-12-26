@@ -11,7 +11,7 @@ import com.TreenityBackend.entities.Admin;
 public interface AdminService {
 
 	// Salva un nuovo admin
-	void saveAdmin(Admin admin);
+	Admin saveAdmin(Admin admin);
 	
 	// Controlla se esiste un admin con email
     boolean existsByEmail(String email);
