@@ -32,7 +32,8 @@ public class Admin {
 
     @Column(nullable = false, unique = true)
     private String email;
-
+    
+    @Builder.Default
     @Column(nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    final private LocalDateTime createdAt = LocalDateTime.now();
+    private LocalDateTime createdAt = LocalDateTime.now();
 }
