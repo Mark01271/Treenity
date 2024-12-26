@@ -1,28 +1,33 @@
 package com.TreenityBackend.services;
 
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import java.util.List;
+import java.util.Optional;
 
 import com.TreenityBackend.entities.Admin;
+
+
 
 // Dichiarazione dei metodi per la logica da applicare sugli admin
 public interface AdminService {
 
-	// Registra un nuovo admin
-	void registerAdmin(Admin admin);
+	// Salva un nuovo admin
+	void saveAdmin(Admin admin);
+	
+	// Controlla se esiste un admin con email
+    boolean existsByEmail(String email);
+    // Controlla se esiste un admin con username
+    boolean existsByUsername(String username);
  
-	// Carica i dettagli dell'admin in base al nome
-	UserDetails loadAdminByUsername(String Username) throws UsernameNotFoundException;
- 
+	// Trova admin in base alla sua mail 
+	Optional<Admin> getAdminByEmail(String email);
 	// Trova admin in base al suo username
-	Admin findByUsername(String username); 
+	Optional<Admin> getAdminByUsername(String username); 
 	// Trova admin in base al suo id 
-	Admin getAdminById(Integer id);
+	Optional<Admin> getAdminById(Integer id);
 	
-	// Aggiorna email admin
-	boolean updateEmail(Integer id, String newEmail, String password);
-	
-	// Aggiorna password admin
-	boolean updatePassword(Integer id, String newPassword, String currentPassword);
-	
+	// Trova tutti gli admin
+    List<Admin> getAllAdmins();
+
+    // Elimina un admin in base al suo id
+    void deleteAdmin(Integer id);
 }
