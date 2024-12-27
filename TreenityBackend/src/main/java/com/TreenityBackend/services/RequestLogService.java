@@ -6,9 +6,9 @@ import java.util.Optional;
 import com.TreenityBackend.entities.RequestLog;
 
 public interface RequestLogService {
+    RequestLog createRequestLog(Object request, Integer adminId);
     List<RequestLog> getAllLogs();
     Optional<RequestLog> getLogById(Integer id);
-    List<RequestLog> getLogsByAdminId(Integer adminId);
-    List<RequestLog> getLogsByStatusId(Integer statusId);
-    RequestLog saveLog(RequestLog requestLog);
+    RequestLog saveLog(RequestLog requestLog);  // Metodo per salvare un log
+    RequestLog updateRequestLog(Integer id, RequestLog updatedRequestLog);
 }
