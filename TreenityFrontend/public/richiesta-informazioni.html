@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Cascina Giovane</title>
+    <link rel="stylesheet" href="/src/assets/styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand"><a class="navbar-item" href="/cascina-giovane.it/home" onclick="navigateTo('/cascina-giovane,it/home')"><img src="src/images/cascina-caccia-logo.png" alt="" class="navbar-brand logo"></a></div>
+
+    <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/chi-siamo">Chi siamo</a>
+        <a class="navbar-item" href="/attivita">Le nostre attività</a>
+        <a class="navbar-item" href="/richiesta-prenotazione.html">Prenota ora</a>
+        <a class="navbar-item" href="/richiesta-informazioni.html">Facci una domanda</a>
+        <a class="navbar-item" href="https://www.libera.it/" target="_blank">Tutto su Libera</a>
+      </div>
+    </div>
+  </header>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Title
+                </h1>
+                <h2 class="subtitle">
+                    subtitle
+                </h2>
+                <a href="/cascina-giovane.it/home" onclick="navigateTo('/cascina-giovane,it/home'); return false">test for routing</a>
+            </div>
+        </div>
+    </section>
+    <section class="hero is-fullheight-with-navbar">
+      <div class="hero-body">
+        <div class="container">
+          <div class="card is-centered">
+            <div class="card-content">
+              <form action="#" method="POST" class="form">
+                <div class="field">
+                  <label class="label" for="nome">Nome Contatto</label>
+                  <div class="control">
+                    <input id="nome" name="nome" class="input" type="text"" required>
+                  </div>
+                </div>
+  
+                <div class="field">
+                  <label class="label" for="email">Email</label>
+                  <div class="control">
+                    <input id="email" name="email" class="input" type="email" required>
+                  </div>
+                </div>
+  
+                <div class="field">
+                  <label class="label" for="phone">Telefono</label>
+                  <div class="control">
+                    <input type="tel" id="phone" name="phone" class="input" placeholder="+39" value="+39" required>
+                  </div>
+                </div>
+  
+                <div class="field">
+                  <label class="label" for="dropdown">Cosa vorresti sapere?</label>
+                  <div class="control">
+                    <div class="select">
+                      <select id="dropdown" name="dropdown" required>
+                        <option value="" disabled selected>Seleziona un'opzione</option>
+                        <option value="option1">Opzione 1</option>
+                        <option value="option2">Opzione 2</option>
+                        <option value="option3">Opzione 3</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+  
+                <fieldset>
+                  <div class="field">
+                    <label class="label" for="informazioni">Informazioni da richiedere</label>
+                    <legend>Scrivi qui le tue domande riguardo la struttura, gli eventi e i laboratori disponibili presso Cascina Caccia!</legend>
+                    <div class="control">
+                      <textarea id="informazioni" name="informazioni" class="textarea" placeholder="Scrivi qui..." required></textarea>
+                    </div>
+                  </div>
+                </fieldset>
+  
+                <div class="field">
+                  <div class="control">
+                    <label class="checkbox">
+                      <input type="checkbox" required>
+                      Accetto i termini e le condizioni
+                    </label>
+                  </div>
+                </div>
+  
+                <div class="field">
+                  <div class="control">
+                    <label class="checkbox">
+                      <input type="checkbox">
+                      Voglio ricevere aggiornamenti via email
+                    </label>
+                  </div>
+                </div>
+  
+                <div class="field">
+                  <div class="control">
+                    <button class="button" type="submit">Invia</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="/src/scripts/main.ts"></script>
+    <script type="module" src="/src/scripts/home.ts"></script>
+    <script type="module" src="/src/router.js"></script>
+</body>
+</html>

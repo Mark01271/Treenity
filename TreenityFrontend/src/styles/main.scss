@@ -1,0 +1,67 @@
+@use "sass:color";
+
+// Import Normalize.css
+@import 'normalize.css/normalize.css';
+
+// Import Bulma CSS
+@import 'bulma/bulma';
+
+// Import Montserrat Google Font
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+// Set brand colors
+$fuchsia: #e1117e;
+$orange: #f49526;
+$yellow: #f0df1c;
+$black: #1a1a1a;
+$greyed-out: #363636;
+$white: #DDD;
+
+// Additional styles
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Montserrat', sans-serif;
+  background: #DDD;
+}
+
+// Navbar styles
+.navbar {
+  height: 64px;
+  background: rgb(50,50,50);
+  background: linear-gradient(180deg, #323232cd 0%, #dddddd 100%); 
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  max-height: 64px; // Maintain the navbar's height
+  object-fit: contain; // Preserve the logo's aspect ratio
+}
+
+.navbar-burger span {
+  background: $greyed-out;
+}
+
+.card, .input {
+  background: $white;
+  box-shadow: 4px 4px 10px $black;
+}
+
+form .label {
+  color: $black
+}
+
+form button {
+  background: $fuchsia;
+  color: $white;
+}
