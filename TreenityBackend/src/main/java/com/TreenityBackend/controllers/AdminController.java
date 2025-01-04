@@ -35,7 +35,7 @@ public class AdminController {
     }
 
     // Crea un nuovo Admin
-    @PostMapping
+    @PostMapping("/createAdmin")
     public ResponseEntity<Admin> saveAdmin(@RequestBody Admin admin) {
         try {
             Admin savedAdmin = adminService.saveAdmin(admin);
