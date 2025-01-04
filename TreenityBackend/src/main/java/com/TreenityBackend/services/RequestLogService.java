@@ -1,9 +1,9 @@
 package com.TreenityBackend.services;
 
+import com.TreenityBackend.entities.RequestLog;
+
 import java.util.List;
 import java.util.Optional;
-
-import com.TreenityBackend.entities.RequestLog;
 
 public interface RequestLogService {
     RequestLog createRequestLog(Object request, Integer adminId);
