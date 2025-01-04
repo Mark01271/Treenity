@@ -19,11 +19,17 @@ html {
 h1,
 h2 {
   text-align: center;
+  font-size: 3em;
+  font-weight: bold;
   color: $greyed-out;
 }
 
-// .hero {
-//   width: 100%;
-//   height: 100vh;
-//   background: url("../images/cacciaballa.jpg") no-repeat center cover;
-// }
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button {
+  text-align: center;
+}
