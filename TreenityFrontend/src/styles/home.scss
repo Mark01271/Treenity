@@ -1,0 +1,29 @@
+// Set brand colors
+$fuchsia: #e1117e;
+$orange: #f49526;
+$yellow: #f0df1c;
+$black: #1a1a1a;
+$greyed-out: #363636;
+$white: #ddd;
+
+// Additional styles
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+  background: #ddd;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: $greyed-out;
+}
+
+// .hero {
+//   width: 100%;
+//   height: 100vh;
+//   background: url("../images/cacciaballa.jpg") no-repeat center cover;
+// }
