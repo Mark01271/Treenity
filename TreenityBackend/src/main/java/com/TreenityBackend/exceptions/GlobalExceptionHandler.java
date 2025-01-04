@@ -10,13 +10,35 @@ import java.time.LocalDateTime;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    // Gestione delle risorse non trovate
-    @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleResourceNotFoundException(ResourceNotFoundException ex) {
+    // Gestione delle risorse non trovate (InfoRequest)
+    @ExceptionHandler(InfoRequestNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleInfoRequestNotFoundException(InfoRequestNotFoundException ex) {
         ErrorResponse errorResponse = new ErrorResponse(
                 LocalDateTime.now(),
                 ex.getMessage(),
-                "Resource not found"
+                "InfoRequest Not Found"
+        );
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+    }
+
+    // Gestione delle risorse non trovate (AppointmentRequest)
+    @ExceptionHandler(AppointmentRequestNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleAppointmentRequestNotFoundException(AppointmentRequestNotFoundException ex) {
+        ErrorResponse errorResponse = new ErrorResponse(
+                LocalDateTime.now(),
+                ex.getMessage(),
+                "AppointmentRequest Not Found"
+        );
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+    }
+
+    // Gestione degli errori di stato (StatusNotFound)
+    @ExceptionHandler(StatusNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleStatusNotFoundException(StatusNotFoundException ex) {
+        ErrorResponse errorResponse = new ErrorResponse(
+                LocalDateTime.now(),
+                ex.getMessage(),
+                "Status Not Found"
         );
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }
@@ -27,7 +49,7 @@ public class GlobalExceptionHandler {
         ErrorResponse errorResponse = new ErrorResponse(
                 LocalDateTime.now(),
                 ex.getMessage(),
-                "Validation error"
+                "Validation Error"
         );
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
@@ -38,7 +60,7 @@ public class GlobalExceptionHandler {
         ErrorResponse errorResponse = new ErrorResponse(
                 LocalDateTime.now(),
                 ex.getMessage(),
-                "An unexpected error occurred"
+                "An Unexpected Error Occurred"
         );
         return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
