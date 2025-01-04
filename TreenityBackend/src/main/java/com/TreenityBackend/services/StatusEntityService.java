@@ -1,9 +1,9 @@
 package com.TreenityBackend.services;
 
+import com.TreenityBackend.entities.StatusEntity;
+
 import java.util.List;
 import java.util.Optional;
-
-import com.TreenityBackend.entities.StatusEntity;
 
 public interface StatusEntityService {
     List<StatusEntity> getAllStatuses();
