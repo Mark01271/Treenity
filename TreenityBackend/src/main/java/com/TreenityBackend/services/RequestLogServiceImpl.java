@@ -1,36 +1,35 @@
 package com.TreenityBackend.services;
 
-import java.util.List;
-import java.util.Optional;
-
-import org.springframework.stereotype.Service;
-
 import com.TreenityBackend.entities.Admin;
 import com.TreenityBackend.entities.RequestLog;
 import com.TreenityBackend.entities.StatusEntity;
 import com.TreenityBackend.repos.RequestLogDAO;
-
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class RequestLogServiceImpl implements RequestLogService {
 
-    private final AdminService adminService;  // Per recuperare l'admin che ha effettuato l'operazione
-    private final StatusEntityService statusEntityService;  // Per recuperare lo stato dal database
-    private final RequestLogDAO requestLogDao;  // Repository per i RequestLog
+    private AdminService adminService;
+    private StatusEntityService statusEntityService;
+    private RequestLogDAO requestLogDao;
 
     // Crea un nuovo RequestLog
     @Override
     public RequestLog createRequestLog(Object request, Integer adminId) {
         Admin admin = adminService.getAdminById(adminId).orElseThrow(() -> new RuntimeException("Admin not found"));
-        StatusEntity status = statusEntityService.getStatusByName(StatusEntity.StatusName.RECEIVED).orElseThrow(() -> new RuntimeException("Status not found"));
+        StatusEntity status = statusEntityService.getStatusByName(StatusEntity.StatusName.RECEIVED)
+                .orElseThrow(() -> new RuntimeException("Status not found"));
 
         RequestLog requestLog = RequestLog.builder()
-            .updatedBy(admin)
-            .status(status)
-            .comment("Nuova richiesta generata")
-            .build();
+                .updatedBy(admin)
+                .status(status)
+                .comment("Nuova richiesta generata")
+                .build();
 
         return requestLogDao.save(requestLog);
     }
