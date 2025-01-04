@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.TreenityBackend.entities.AppointmentRequest;
 import com.TreenityBackend.entities.RequestLog;
+import com.TreenityBackend.exceptions.AppointmentRequestNotFoundException;
+import com.TreenityBackend.exceptions.ValidationException;
 import com.TreenityBackend.services.AppointmentRequestService;
 import com.TreenityBackend.services.EmailService;
 import com.TreenityBackend.services.RequestLogService;
@@ -23,15 +25,21 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AppointmentRequestController {
 
-    private AppointmentRequestService appointmentRequestService;
-    private RequestLogService requestLogService;
-    private EmailService emailService;
+    private final AppointmentRequestService appointmentRequestService;
+    private final RequestLogService requestLogService;
+    private final EmailService emailService;
 
-    // Endpoint per creare una nuova richiesta di appuntamento
     @PostMapping
     public AppointmentRequest createAppointmentRequest(@RequestBody AppointmentRequest request, @RequestParam Integer adminId) {
+        if (request == null || adminId == null) {
+            throw new ValidationException("La richiesta o l'ID dell'amministratore non possono essere nulli.");
+        }
+
         // Crea un nuovo RequestLog con lo stato dinamico
         RequestLog requestLog = requestLogService.createRequestLog(request, adminId);
+
+        // Assegna il RequestLog alla richiesta di appuntamento
+        request.setRequestLog(requestLog);
 
         // Salva la richiesta di appuntamento
         AppointmentRequest savedRequest = appointmentRequestService.saveAppointmentRequest(request);
@@ -40,25 +48,31 @@ public class AppointmentRequestController {
         emailService.sendUserConfirmationEmail(request.getEmail());
 
         // Invia notifica all'amministratore
-        emailService.sendAdminNotificationEmail("admin@yourdomain.com", 
-                "Nuova richiesta di appuntamento:\n\n" +
-                "Gruppo: " + request.getGroupName() + "\n" +
-                "Contatto: " + request.getContactPerson() + "\n" +
-                "Email: " + request.getEmail() + "\n" +
-                "Telefono: " + request.getPhone());
+        String requestDetails = "Nuova richiesta di appuntamento:\n\n" +
+                                "Gruppo: " + request.getGroupName() + "\n" +
+                                "Contatto: " + request.getContactPerson() + "\n" +
+                                "Email: " + request.getEmail() + "\n" +
+                                "Telefono: " + request.getPhone();
+        emailService.sendAdminNotificationEmail("admin@yourdomain.com", requestDetails);
 
         return savedRequest;
     }
 
-    // Endpoint per ottenere tutte le richieste di appuntamento
     @GetMapping
     public List<AppointmentRequest> getAllAppointmentRequests() {
-        return appointmentRequestService.getAllAppointmentRequests();
+        List<AppointmentRequest> requests = appointmentRequestService.getAllAppointmentRequests();
+        if (requests.isEmpty()) {
+            throw new AppointmentRequestNotFoundException("Nessuna richiesta di appuntamento trovata.");
+        }
+        return requests;
     }
 
-    // Endpoint per ottenere una richiesta di appuntamento per ID
     @GetMapping("/{id}")
     public AppointmentRequest getAppointmentRequestById(@PathVariable Integer id) {
-        return appointmentRequestService.getAppointmentRequestById(id).orElse(null);
+        if (id == null) {
+            throw new ValidationException("L'ID della richiesta non può essere nullo.");
+        }
+        return appointmentRequestService.getAppointmentRequestById(id)
+                .orElseThrow(() -> new AppointmentRequestNotFoundException("AppointmentRequest con ID " + id + " non trovato"));
     }
 }
