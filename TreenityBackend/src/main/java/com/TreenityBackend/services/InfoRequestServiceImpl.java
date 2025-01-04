@@ -16,8 +16,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class InfoRequestServiceImpl implements InfoRequestService {
 
-    private final InfoRequestDAO infoRequestDAO;
-    private final RequestLogDAO requestLogDAO;
+    private InfoRequestDAO infoRequestDAO;
+    private RequestLogDAO requestLogDAO;
 
     @Override
     public InfoRequest saveInfoRequest(InfoRequest infoRequest) {
