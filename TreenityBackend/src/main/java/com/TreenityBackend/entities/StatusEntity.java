@@ -22,7 +22,10 @@ public class StatusEntity {
     private StatusName name;
 
     public enum StatusName {
-        RECEIVED, IN_PROGRESS, COMPLETED, ARCHIVED
+        received,
+        in_progress,
+        completed,
+        archived
     }
 }
 
