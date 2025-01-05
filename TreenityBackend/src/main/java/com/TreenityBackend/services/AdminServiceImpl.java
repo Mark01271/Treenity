@@ -16,8 +16,8 @@ import java.util.regex.Pattern;
 @RequiredArgsConstructor
 public class AdminServiceImpl implements AdminService {
 
-    private AdminDAO adminDAO;
-    private PasswordEncoder passwordEncoder;
+    private final AdminDAO adminDAO;
+    private final PasswordEncoder passwordEncoder;
 
     // Validazione della complessità della password
     private boolean isValidPassword(String password) {
