@@ -17,8 +17,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AppointmentRequestServiceImpl implements AppointmentRequestService {
 
-    private AppointmentRequestDAO appointmentRequestDAO;
-    private RequestLogDAO requestLogDAO;
+    private final AppointmentRequestDAO appointmentRequestDAO;
+    private final RequestLogDAO requestLogDAO;
 
     @Override
     public List<AppointmentRequest> getAllAppointmentRequests() {
