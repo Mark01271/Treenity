@@ -14,15 +14,16 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class RequestLogServiceImpl implements RequestLogService {
 
-    private AdminService adminService;
-    private StatusEntityService statusEntityService;
-    private RequestLogDAO requestLogDao;
+    private final AdminService adminService;
+    private final StatusEntityService statusEntityService;
+    private final RequestLogDAO requestLogDao;
 
     // Crea un nuovo RequestLog
     @Override
     public RequestLog createRequestLog(Object request, Integer adminId) {
         Admin admin = adminService.getAdminById(adminId).orElseThrow(() -> new RuntimeException("Admin not found"));
-        StatusEntity status = statusEntityService.getStatusByName(StatusEntity.StatusName.RECEIVED)
+
+        StatusEntity status = statusEntityService.getStatusByName(StatusEntity.StatusName.received)
                 .orElseThrow(() -> new RuntimeException("Status not found"));
 
         RequestLog requestLog = RequestLog.builder()
