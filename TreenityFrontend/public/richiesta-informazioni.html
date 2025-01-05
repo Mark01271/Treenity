@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Cascina Giovane</title>
-    <link rel="stylesheet" href="/src/assets/styles/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -28,19 +27,20 @@
       </div>
     </div>
   </header>
-    <section class="hero">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    Title
-                </h1>
-                <h2 class="subtitle">
-                    subtitle
-                </h2>
-                <a href="/cascina-giovane.it/home" onclick="navigateTo('/cascina-giovane,it/home'); return false">test for routing</a>
-            </div>
-        </div>
-    </section>
+
+          <div class="container">
+              <div class="columns is-centered">
+                  <div class="column is-half">
+                    <h1 class="title is-1 centered">
+                      Richiesta informazioni
+                    </h1>
+                    <h2 class="subtitle centered">
+                      Compila il form per farci qualsiasi domanda ti venga in mente!
+                    </h2>
+                  </div>
+              </div>
+          </div>
+
     <section class="hero is-fullheight-with-navbar">
       <div class="hero-body">
         <div class="container">
@@ -123,7 +123,7 @@
     </section>
 
     <script type="module" src="/src/scripts/main.ts"></script>
-    <script type="module" src="/src/scripts/home.ts"></script>
+    <script type="module" src="/src/scripts/forms.ts"></script>
     <script type="module" src="/src/router.js"></script>
 </body>
 </html>

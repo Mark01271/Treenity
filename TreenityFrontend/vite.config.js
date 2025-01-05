@@ -48,11 +48,12 @@ export default defineConfig({
     },
   },
   server: {
+    port: 3000,
     open: '/', // open index.html automatically
     historyApiFallback: true, // serves index.html for unknown paths
     proxy: {
       '/api': { // path prefix for API requests
-        target: 'http://localhost:8080', // backend server URL
+        target: 'http://localhost:1700', // backend server URL
         changeOrigin: true,
         secure: false, // to use HTTP instead of HTTPS
         rewrite: (path) => path.replace(/^\/api/, ''), // Remove /api prefix
@@ -66,3 +67,5 @@ export default defineConfig({
     }
   }
 });
+
+// 1700 porta backend
