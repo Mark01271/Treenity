@@ -75,3 +75,13 @@ CREATE TABLE IF NOT EXISTS Appointment_Requests (
   INDEX (email), -- Index for faster searches
   INDEX (status_id) -- Index for filtering by status
 );
+
+
+--inserimento dati
+
+INSERT INTO Statuses (name) 
+VALUES 
+  ('RECEIVED'),
+  ('IN_PROGRESS'),
+  ('COMPLETED'),
+  ('ARCHIVED');
