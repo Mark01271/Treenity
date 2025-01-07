@@ -27,7 +27,14 @@ public class RequestLogController {
     private final EmailService emailService;
     private final StatusEntityService statusEntityService;
 
-    @GetMapping
+    @Autowired
+    private EmailService emailService;
+
+    @Autowired
+    private StatusEntityService statusEntityService;
+
+    // Endpoint per ottenere tutti i RequestLog
+    @GetMapping("/all")
     public List<RequestLog> getAllRequestLogs() {
         return requestLogService.getAllLogs();
     }
