@@ -27,9 +27,5 @@ h2 {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-
-.button {
-  text-align: center;
+  align-items: center;
 }
