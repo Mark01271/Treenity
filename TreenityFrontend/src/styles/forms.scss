@@ -88,3 +88,7 @@ form button {
   background: $fuchsia;
   color: $button-color;
 }
+
+.tickless {
+  background-image: none; // Removes Bulma's default arrow background
+}
