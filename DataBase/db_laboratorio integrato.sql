@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS Appointment_Requests (
 );
 
 
---inserimento dati
+-- inserimento dati
 
 INSERT INTO Statuses (name) 
 VALUES 
