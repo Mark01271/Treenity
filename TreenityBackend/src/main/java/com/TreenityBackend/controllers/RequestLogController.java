@@ -2,6 +2,7 @@ package com.TreenityBackend.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,8 +25,8 @@ import lombok.RequiredArgsConstructor;
 public class RequestLogController {
 
     private final RequestLogService requestLogService;
-    private final EmailService emailService;
-    private final StatusEntityService statusEntityService;
+    private final EmailService emailService1;
+    private final StatusEntityService statusEntityService1;
 
     @Autowired
     private EmailService emailService;
@@ -48,7 +49,7 @@ public class RequestLogController {
     @PostMapping
     public RequestLog saveRequestLog(@RequestBody RequestLog requestLog) {
         // Trova lo stato iniziale
-        StatusEntity status = statusEntityService.getStatusByName(StatusEntity.StatusName.received)
+        StatusEntity status = statusEntityService1.getStatusByName(StatusEntity.StatusName.received)
             .orElseThrow(() -> new RuntimeException("Status non trovato"));
 
         requestLog.setStatus(status);
@@ -59,7 +60,7 @@ public class RequestLogController {
         String requestDetails = "Nuovo RequestLog creato:\n\n" +
                                 "Stato: " + status.getName() + "\n" +
                                 "Commento: " + requestLog.getComment();
-        emailService.sendAdminNotificationEmail(adminEmail, requestDetails);
+        emailService1.sendAdminNotificationEmail(adminEmail, requestDetails);
 
         return savedRequestLog;
     }
