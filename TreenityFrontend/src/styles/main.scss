@@ -9,13 +9,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
 // Set brand colors
-$fuchsia: #e1117e;
 $orange: #f49526;
 $yellow: #f0df1c;
 $black: #1a1a1a;
 $greyed-out: #363636;
 $white: #ddd;
-$grey: #cecccc;
 
 // Additional styles
 * {
@@ -63,21 +61,5 @@ form .label {
 }
 
 form button {
-  background: $fuchsia;
   color: $white;
-}
-
-h3 {
-  color: $orange;
-  font-weight: bold;
-  font-size: 25px;
-}
-//Francesco Add new class "is-fuchsia"
-.is-fuchsia {
-  background-color: $fuchsia;
-}
-
-.footer {
-  margin-top: 1em;
-  background-color: $grey;
 }

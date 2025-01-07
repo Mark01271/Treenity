@@ -1,5 +1,6 @@
 // Set brand colors
 $fuchsia: #e1117e;
+$grey: #cecccc;
 $orange: #f49526;
 $yellow: #f0df1c;
 $black: #1a1a1a;
@@ -16,6 +17,7 @@ html {
   background: #ddd;
 }
 
+//Aggiunte Fra
 h1,
 h2 {
   text-align: center;
@@ -28,4 +30,30 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+h3 {
+  color: $orange;
+  font-weight: bold;
+  font-size: 25px;
+}
+//Francesco Add new class "is-fuchsia"
+.is-fuchsia {
+  background-color: $fuchsia;
+}
+
+.footer {
+  margin-top: 1em;
+  background-color: $grey;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+ul li {
+  color: $black;
 }
