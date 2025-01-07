@@ -74,7 +74,7 @@ public class InfoRequestController {
         return savedRequest;
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<InfoRequest> getAllInfoRequests() {
         List<InfoRequest> requests = infoRequestService.getAllInfoRequests();
         if (requests.isEmpty()) {
