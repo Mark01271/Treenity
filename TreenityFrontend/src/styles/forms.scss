@@ -1,0 +1,94 @@
+@use "sass:color";
+@use "bulma";
+@use "bulma/sass/utilities/initial-variables";
+
+// Import Normalize.css
+@import 'normalize.css/normalize.css';
+
+// Import Montserrat Google Font
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+// Set brand colors
+$fuchsia: #e1117e;
+$orange: #f49526;
+$yellow: #f0df1c;
+$black: #1a1a1a;
+$greyed-out: #363636;
+$white: #DDD;
+
+// Customize Bulma variables for a white background and black text
+$primary: $black; // Define primary color as black
+$body-background-color: initial-variables.$white; // Background for the body
+$navbar-background-color: initial-variables.$white; // Navbar background
+$navbar-item-color: $black; // Navbar item text color
+$navbar-item-hover-color: $black; // Navbar item hover color
+$card-background-color: initial-variables.$white; // Card background
+$input-background-color: initial-variables.$white; // Input fields background
+$input-color: $black; // Input fields text color
+$textarea-background-color: initial-variables.$white; // Textarea background
+$textarea-color: $black; // Textarea text color
+$select-background-color: initial-variables.$white; // Select background
+$select-color: $black; // Select text color
+$label-color: $black; // Form label color
+$button-color: $white; // Button text color
+$button-background-color: $fuchsia; // Button background
+
+// Overriding variable values
+$section-padding: 50px 30px;
+
+// Override Bulma hero padding
+$hero-padding: 70px 20px;
+
+// Additional styles
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Montserrat', sans-serif;
+  background: $body-background-color;
+}
+
+.centered-heading {
+  text-align: center;
+}
+
+// Override Bulma section padding
+.section {
+  padding: 50px 30px; // Custom padding for section
+}
+
+// Override Bulma hero padding
+.hero {
+  padding: 70px 20px; // Custom padding for hero
+}
+
+.card {
+  background: $card-background-color;
+  border-radius: 16px;
+  box-shadow: 0px 0px 28px 0px $greyed-out;
+}
+
+.input, .textarea, .select select {
+  background: $input-background-color;
+  color: $input-color;
+  border: 1px solid color.scale(initial-variables.$grey-light, $lightness: -20%);
+}
+
+body h1, body h2, body legend {
+  color: $black !important; //TO BE FIXED!!!
+}
+
+form .label {
+  color: $label-color;
+  font-weight: bold;
+}
+
+form button {
+  background: $fuchsia;
+  color: $button-color;
+}
+
+.tickless {
+  background-image: none; // Removes Bulma's default arrow background
+}
