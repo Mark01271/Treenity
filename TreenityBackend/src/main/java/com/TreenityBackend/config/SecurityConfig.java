@@ -15,7 +15,11 @@ import org.springframework.security.web.header.writers.StaticHeadersWriter;
 @EnableWebSecurity
 public class SecurityConfig {
 
-
+	@Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder(); // Utilizza BCrypt per codificare le password
+    }
+	
     /*scommentare per test
     //per ora autorizza tutti e ignora i token CSRF per ogni richiesta
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -52,7 +56,7 @@ public class SecurityConfig {
                 .ignoringRequestMatchers("/**") // Ignora CSRF per ora, da gestire in seguito
             )
             .authorizeHttpRequests(auth -> auth
-            	.requestMatchers("/admin/**", "/appointment-requests/**", "/info-requests/**", "/request-log/**", "/status/**" ).authenticated() // Protegge il backoffice richiedendo autenticazione
+            	//.requestMatchers("/admin/**", "/appointment-requests/**", "/info-requests/**", "/request-log/**", "/status/**" ).authenticated() // Protegge il backoffice richiedendo autenticazione
             	.anyRequest().permitAll() // Tutto il resto è accessibile senza login
             )
             // Configura il login
