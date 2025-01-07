@@ -73,8 +73,7 @@ public class AppointmentRequestController {
         return savedRequest;
     }
 
-
-    @GetMapping
+    @GetMapping("/all")
     public List<AppointmentRequest> getAllAppointmentRequests() {
         List<AppointmentRequest> requests = appointmentRequestService.getAllAppointmentRequests();
         if (requests.isEmpty()) {
