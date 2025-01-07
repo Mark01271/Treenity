@@ -15,6 +15,7 @@ $yellow: #f0df1c;
 $black: #1a1a1a;
 $greyed-out: #363636;
 $white: #ddd;
+$grey: #cecccc;
 
 // Additional styles
 * {
@@ -66,13 +67,17 @@ form button {
   color: $white;
 }
 
+h3 {
+  color: $orange;
+  font-weight: bold;
+  font-size: 25px;
+}
 //Francesco Add new class "is-fuchsia"
 .is-fuchsia {
   background-color: $fuchsia;
 }
 
 .footer {
-  width: auto;
-  height: 200px;
-  background-color: #dddddd;
+  margin-top: 1em;
+  background-color: $grey;
 }
