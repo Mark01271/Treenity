@@ -20,7 +20,7 @@ public class AdminController {
     private final AdminService adminService;
 
     // Ottieni tutti gli admin
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Admin>> getAllAdmins() {
         List<Admin> admins = adminService.getAllAdmins();
         return ResponseEntity.ok(admins);
@@ -46,7 +46,7 @@ public class AdminController {
     }
 
     // Aggiorna un Admin tramite ID
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<Admin> updateAdmin(@PathVariable Integer id, @RequestBody Admin admin) {
         try {
             admin.setId(id);
@@ -60,7 +60,7 @@ public class AdminController {
     }
 
     // Elimina un Admin tramite ID
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteAdmin(@PathVariable Integer id) {
         try {
             adminService.deleteAdmin(id);
