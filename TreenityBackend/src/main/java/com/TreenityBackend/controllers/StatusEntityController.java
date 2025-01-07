@@ -16,7 +16,7 @@ public class StatusEntityController {
     private StatusEntityService statusEntityService;
 
     // Get all Statuses
-    @GetMapping
+    @GetMapping("/all")
     public List<StatusEntity> getAllStatuses() {
         return statusEntityService.getAllStatuses();
     }
@@ -40,7 +40,7 @@ public class StatusEntityController {
     }
 
     // Update Status by ID
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public StatusEntity updateStatus(@PathVariable Integer id, @RequestBody StatusEntity statusEntity) {
         statusEntity.setId(id);
         return statusEntityService.saveStatus(statusEntity);
