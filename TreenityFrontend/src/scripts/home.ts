@@ -1,9 +1,7 @@
-// src/scripts/home.ts
-
 //Import home.scss file
 import "/src/styles/home.scss";
 
-import bulmaCarousel from "/bulma-carousel/dist/js/bulma-carousel.min.js";
+import '@creativebulma/bulma-carousel/dist/js/bulma-carousel.min.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   // Example: Fetching data from the backend API
