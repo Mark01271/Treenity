@@ -8,7 +8,13 @@ const carouselOptions = {
   slidesToShow: 1,
   pagination: true,
   navigationKeys: true,
-  loop: true
+  loop: true,
+  breakpoints: [
+    { changePoint: 480, slidesToShow: 1, slidesToScroll: 1 },
+    { changePoint: 768, slidesToShow: 1, slidesToScroll: 1 },
+    { changePoint: 1024, slidesToShow: 1, slidesToScroll: 1 },
+    { changePoint: 1280, slidesToShow: 1, slidesToScroll: 1 }
+  ]
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -20,27 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  // @ts-ignore
+
   const carousels = bulmaCarousel.attach("#carousel-demo", carouselOptions);
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  // Example: Fetching data from the backend API
-  fetch("http://localhost:8080/api/your-endpoint")
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Data from backend:", data);
-      // Update the DOM with the fetched data
-    })
-    .catch((error) => {
-      console.error("Error fetching data:", error);
-    });
-
-  // Example: Adding an event listener to a button
-  const button = document.getElementById("exampleButton");
-  if (button) {
-    button.addEventListener("click", () => {
-      alert("Button clicked!");
-    });
-  }
 });
