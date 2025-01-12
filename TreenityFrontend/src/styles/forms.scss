@@ -3,10 +3,10 @@
 @use "bulma/sass/utilities/initial-variables";
 
 // Import Normalize.css
-@import 'normalize.css/normalize.css';
+@import "normalize.css/normalize.css";
 
 // Import Montserrat Google Font
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
 // Set brand colors
 $fuchsia: #e1117e;
@@ -14,7 +14,7 @@ $orange: #f49526;
 $yellow: #f0df1c;
 $black: #1a1a1a;
 $greyed-out: #363636;
-$white: #DDD;
+$white: #ddd;
 
 // Customize Bulma variables for a white background and black text
 $primary: $black; // Define primary color as black
@@ -45,7 +45,7 @@ $hero-padding: 70px 20px;
 }
 
 html {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background: $body-background-color;
 }
 
@@ -69,13 +69,17 @@ html {
   box-shadow: 0px 0px 28px 0px $greyed-out;
 }
 
-.input, .textarea, .select select {
+.input,
+.textarea,
+.select select {
   background: $input-background-color;
   color: $input-color;
   border: 1px solid color.scale(initial-variables.$grey-light, $lightness: -20%);
 }
 
-body h1, body h2, body legend {
+body h1,
+body h2,
+body legend {
   color: $black !important; //TO BE FIXED!!!
 }
 

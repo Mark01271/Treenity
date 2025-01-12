@@ -1,4 +1,5 @@
-// src/scripts/home.ts
+//Import home.scss file
+import "/src/styles/home.scss";
 
 //Import home.scss file
 import "/src/styles/home.scss";
