@@ -19,10 +19,10 @@ const carouselOptions = {
 
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize carousel
-  const carousels = bulmaCarousel.attach('#carousel-demo', carouselOptions);
+  const carousels = bulmaCarousel.attach("#carousel-demo", carouselOptions);
 
   // Optional: For debugging
-  console.log('Carosello funziona:', carousels);
+  console.log("Carosello funziona:", carousels);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
