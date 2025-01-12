@@ -1,12 +1,7 @@
 //Import home.scss file
 import "/src/styles/home.scss";
 
-//Import home.scss file
-import "/src/styles/home.scss";
-
-import "bulma-carousel/dist/js/bulma-carousel.min.js";
-
-declare const bulmaCarousel: any;
+import bulmaCarousel from "bulma-carousel/dist/js/bulma-carousel.min.js";
 
 const carouselOptions = {
   slidesToScroll: 1,

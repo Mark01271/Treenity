@@ -1,5 +1,8 @@
 // Import component
 @use "bulma-carousel";
+// Use node_modules path
+@use 'bulma/sass/utilities';
+
 // Set brand colors
 
 $fuchsia: #e1117e;
@@ -38,6 +41,18 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 h3 {
