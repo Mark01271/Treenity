@@ -8,14 +8,6 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css"
-    /> -->
   </head>
   <body>
     <header class="navbar" role="navigation" aria-label="main navigation">
@@ -72,7 +64,7 @@
         <button class="button is-fuchsia">Prenota un Evento</button>
       </div>
 
-      <div>
+      <div class="container">
         <h2>A caccia della libertà</h2>
         <p>
           Cascina Caccia, bene confiscato alla 'ndrangheta a San Sebastiano da
@@ -88,20 +80,24 @@
           rinascita completa entrando a far parte del grande blocco Terra
           Libera.
         </p>
+      </div>
+      <section id="carousel-section">
         <div id="carousel-demo" class="carousel">
           <div class="item-1 carousel-item">
-            <img src="../src/images/cacciabn.jpg" alt="Image 1">
+            <img src="../src/images/cacciabn.jpg" alt="Image 1" />
           </div>
           <div class="item-2 carousel-item">
-            <img src="../src/images/eredita.jpg" alt="Image 2">
+            <img src="../src/images/eredita.jpg" alt="Image 2" />
           </div>
           <div class="item-3 carousel-item">
-            <img src="../src/images/famiglia.jpg" alt="Image 3">
+            <img src="../src/images/famiglia.jpg" alt="Image 3" />
           </div>
           <div class="item-4 carousel-item">
-            <img src="../src/images/tribunale.jpg" alt="Image 4">
+            <img src="../src/images/tribunale.jpg" alt="Image 4" />
           </div>
         </div>
+      </section>
+      <div class="container">
         <p>
           "Avere il potere e non esercitarlo è altrettanto grave che non averlo
           ed esercitarlo”
@@ -148,10 +144,10 @@
   <script type="module" src="/src/scripts/main.ts"></script>
   <script type="module" src="/src/scripts/home.ts"></script>
   <script type="module" src="/src/router.js"></script>
-  <script>
+  <!-- <script>
     bulmaCarousel.attach("#carousel-demo", {
       slidesToScroll: 1,
-      slidesToShow: 4,
+      slidesToShow: 5,
     });
-  </script>
+  </script> -->
 </html>
