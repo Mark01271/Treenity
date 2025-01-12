@@ -90,10 +90,18 @@
         </p>
         <div id="carousel-demo" class="carousel">
           <ul>
-            <li class="item-1"><img src="../src/images/cacciabn.jpg" /></li>
-            <li class="item-2"><img src="../src/images/eredita.jpg" /></li>
-            <li class="item-3"><img src="../src/images/famiglia.jpg" /></li>
-            <li class="item-4"><img src="../src/images/tribunale.jpg" /></li>
+            <li class="carousel-item">
+              <img src="../src/images/cacciabn.jpg" />
+            </li>
+            <li class="carousel-item">
+              <img src="../src/images/eredita.jpg" />
+            </li>
+            <li class="carousel-item">
+              <img src="../src/images/famiglia.jpg" />
+            </li>
+            <li class="carousel-item">
+              <img src="../src/images/tribunale.jpg" />
+            </li>
           </ul>
         </div>
         <p>
@@ -142,4 +150,10 @@
   <script type="module" src="/src/scripts/main.ts"></script>
   <script type="module" src="/src/scripts/home.ts"></script>
   <script type="module" src="/src/router.js"></script>
+  <script>
+    bulmaCarousel.attach("#carousel-demo", {
+      slidesToScroll: 1,
+      slidesToShow: 4,
+    });
+  </script>
 </html>

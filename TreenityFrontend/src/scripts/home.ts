@@ -3,6 +3,8 @@
 //Import home.scss file
 import "/src/styles/home.scss";
 
+import bulmaCarousel from "/bulma-carousel/dist/js/bulma-carousel.min.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   // Example: Fetching data from the backend API
   fetch("http://localhost:8080/api/your-endpoint")
