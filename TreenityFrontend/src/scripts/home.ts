@@ -6,14 +6,28 @@ import "/src/styles/home.scss";
 
 import "bulma-carousel/dist/js/bulma-carousel.min.js";
 
-// Initialize all elements with carousel class.
-const carousels = bulmaCarousel.attach(".carousel", options);
+declare const bulmaCarousel: any;
 
-// To access to bulmaCarousel instance of an element
-const element = document.querySelector("#my-element");
-if (element && element.bulmaCarousel) {
-  // bulmaCarousel instance is available as element.bulmaCarousel
-}
+const carouselOptions = {
+  slidesToScroll: 1,
+  slidesToShow: 1,
+  pagination: true,
+  navigationKeys: true,
+  loop: true
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Initialize carousel
+  const carousels = bulmaCarousel.attach('#carousel-demo', carouselOptions);
+
+  // Optional: For debugging
+  console.log('Carosello funziona:', carousels);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  // @ts-ignore
+  const carousels = bulmaCarousel.attach("#carousel-demo", carouselOptions);
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   // Example: Fetching data from the backend API
