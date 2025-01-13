@@ -5,8 +5,8 @@ import bulmaCarousel from "bulma-carousel/dist/js/bulma-carousel.min.js";
 
 const carouselOptions = {
   slidesToScroll: 1,
-  slidesToShow: 1,
-  pagination: true,
+  slidesToShow: 1.3,
+  pagination: false,
   navigationKeys: true,
   loop: true,
   breakpoints: [
