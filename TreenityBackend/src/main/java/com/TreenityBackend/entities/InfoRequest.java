@@ -71,6 +71,6 @@ public class InfoRequest {
     private LocalDateTime createdAt = LocalDateTime.now();
 
     public enum GroupType {
-        SCUOLA, SCOUT, FAMIGLIA, GRUPPI_PARROCCHIALI, GRUPPO_EVENTI, ORGANIZZAZIONI, ALTRO
+        Scuola, Scout, Famiglia, Gruppi_parrocchiali, Gruppo_eventi, Organizzazioni, Altro
     }
 }
