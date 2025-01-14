@@ -65,22 +65,37 @@ h3 {
   background-color: $fuchsia;
 }
 
+//Footer francesco
 .footer {
-  margin-top: 1em;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   background-color: $grey;
+}
+.footer_logo img {
+  height: auto;
+  width: 15rem;
+}
+.footer_logo {
+  text-align: center;
+  margin: 1em 1em;
 }
 
 .footer-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-around;
+  @media screen and (max-width: 524px) {
+    flex-direction: column;
+  }
 }
 
-ul li {
-  color: $black;
-}
-
+ul li,
 p {
   color: $black;
+}
+
+.privacy {
+  text-align: center;
 }

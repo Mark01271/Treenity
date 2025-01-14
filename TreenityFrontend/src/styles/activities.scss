@@ -1,0 +1,61 @@
+// @use "sass:color";
+// @use "bulma";
+// @use "bulma/sass/utilities";
+
+// Import Normalize.css
+// @import "normalize.css/normalize.css";
+
+$fuchsia: #e1117e;
+$grey: #cecccc;
+$orange: #f49526;
+$yellow: #f0df1c;
+$black: #1a1a1a;
+$greyed-out: #363636;
+$white: #ddd;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background-color: $white;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: $greyed-out;
+}
+
+h2,
+h3 {
+  font-size: 2em;
+  font-weight: bold;
+  color: $greyed-out;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+button {
+  margin-top: 1rem;
+}
+.is-fuchsia {
+  background-color: $fuchsia;
+}
+
+img {
+  width: auto;
+  height: 300px;
+}
+
+p {
+  color: $black;
+}
