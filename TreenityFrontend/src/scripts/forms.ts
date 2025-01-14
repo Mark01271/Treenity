@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const timeMap: { [key: string]: string } = {
-      'Mattina': 'MATTINA',
-      'Pomeriggio': 'POMERIGGIO',
-      'Giornata': 'GIORNATA'
+      'Mattina': 'Mattina',
+      'Pomeriggio': 'Pomeriggio',
+      'Giornata': 'Giornata'
     };
 
     const intentText = formData.get('informazioni') as string;
