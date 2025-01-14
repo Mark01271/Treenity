@@ -81,9 +81,13 @@
                     <div class="select is-fullwidth">
                       <select id="dropdown" name="dropdown" required>
                         <option value="" disabled selected>Seleziona un'opzione</option>
-                        <option value="option1">Opzione 1</option>
-                        <option value="option2">Opzione 2</option>
-                        <option value="option3">Opzione 3</option>
+                        <option value="SCUOLA">Scuola</option>
+                        <option value="SCOUT">Scout</option>
+                        <option value="GRUPPI_PARROCCHIALI">Gruppi Parrocchiali</option>
+                        <option value="ORGANIZZAZIONI">Organizzazioni</option>
+                        <option value="FAMIGLIA">Famiglia</option>
+                        <option value="GRUPPO_EVENTI">Gruppo Eventi</option>
+                        <option value="ALTRO">Altro</option>
                       </select>
                     </div>
                   </div>
@@ -119,7 +123,7 @@
                 <fieldset>
                   <div class="field">
                     <label class="label" for="informazioni">Intento dell'intervento</label>
-                    <legend>Dicci cosa cerchi dall’esperienza presso <b>Cascina Caccia!</b></legend>
+                    <legend>Dicci cosa cerchi dall'esperienza presso <b>Cascina Caccia!</b></legend>
                     <div class="control">
                       <textarea id="informazioni" name="informazioni" class="textarea" placeholder="Scrivi qui..." required></textarea>
                     </div>
@@ -128,10 +132,10 @@
 
                 <fieldset>
                   <div class="field">
-                    <label class="label" for="informazioni">Richieste aggiuntive</label>
+                    <label class="label" for="informazioni-aggiuntive">Richieste aggiuntive</label>
                     <legend>Rendici al corrente di eventuali necessità, come accessibilità o allergie!</legend>
                     <div class="control">
-                      <textarea id="informazioni" name="informazioni" class="textarea" placeholder="Scrivi qui..." required></textarea>
+                      <textarea id="informazioni-aggiuntive" name="informazioni-aggiuntive" class="textarea" placeholder="Scrivi qui..."></textarea>
                     </div>
                   </div>
                 </fieldset>
@@ -139,7 +143,7 @@
                 <div class="field">
                   <div class="control">
                     <label class="checkbox">
-                      <input type="checkbox" required>
+                      <input type="checkbox" name="terms" required>
                       Accetto i termini e le condizioni
                     </label>
                   </div>
@@ -148,7 +152,7 @@
                 <div class="field">
                   <div class="control">
                     <label class="checkbox">
-                      <input type="checkbox">
+                      <input type="checkbox" name="newsletter">
                       Voglio ricevere aggiornamenti via email
                     </label>
                   </div>

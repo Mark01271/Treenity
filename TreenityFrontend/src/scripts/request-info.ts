@@ -1,5 +1,3 @@
-import '../styles/forms.scss';
-
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('form');
   
@@ -13,25 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log(`${key}: ${value}`);
     });
 
-    const timeMap: { [key: string]: string } = {
-      'Mattina': 'MATTINA',
-      'Pomeriggio': 'POMERIGGIO',
-      'Giornata': 'GIORNATA'
-    };
-
     const intentText = formData.get('informazioni') as string;
 
     const data = {
       contactPerson: formData.get('nome'),
       email: formData.get('email'),
       phone: formData.get('phone'),
-      groupName: formData.get('nome-comitiva'),
+      groupName: formData.get('nome-comitiva') || 'Individual',
       groupType: formData.get('dropdown'),
-      availabilityDate: formData.get('data'),
-      availabilityTime: timeMap[formData.get('orario') as string],
       eventIntent: intentText,
       message: intentText,
-      additionalRequests: formData.get('informazioni-aggiuntive') || '',
+      additionalRequests: '',
       consentForm: formData.get('terms') === 'on',
       newsletter: formData.get('newsletter') === 'on',
       status: {
@@ -44,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Processed data:', data);
 
     try {
-      const response = await fetch('/api/appointment-requests', {
+      const response = await fetch('/api/info-requests', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
