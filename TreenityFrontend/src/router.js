@@ -6,8 +6,8 @@ function navigateTo(path) {
 
 // Define your routes
 page('/', () => {});
-page('/cascina-giovane.it/home', () => {});
-page('/cascina-giovane.it/about', () => {});
+page('/cascina-giovane/home', () => {});
+page('/cascina-giovane/about', () => {});
 
 // Start the router
 page();

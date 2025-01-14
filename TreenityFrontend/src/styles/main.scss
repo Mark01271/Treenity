@@ -3,8 +3,8 @@
 @use "bulma/sass";
 
 
-// Import Normalize.css
-@import 'normalize.css/normalize.css';
+// // Import Normalize.css
+// @import 'normalize.css/normalize.css';
 
 // Import Montserrat Google Font
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
@@ -31,8 +31,11 @@ html {
 .navbar {
   height: 64px;
   background: rgb(50,50,50);
-  background: linear-gradient(180deg, #323232cd 0%, #dddddd 100%); 
-  overflow: hidden;
+  
+  background:linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,255,255,0.510329131652661) 100%);
+  background-image: url('../images/glass.png');
+  background-blend-mode:difference;
+  // overflow: visible;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,8 +44,37 @@ html {
 .navbar-brand {
   display: flex;
   align-items: center;
-}
 
+}
+#navbarMenu{
+  & .is-active{
+    background-color: #f49526!important;
+    padding: 0;
+  }
+  // background-color: $orange;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+// #navbarMenu .navbar-start{
+  
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   // overflow: scroll;
+// }
+
+// .navbar-start .navbar-item{
+//   background-color: #f49526;
+// }
+.navbar-item{
+  display: flex;
+  padding: 0 10px;
+  text-align: center;
+  // overflow: scroll;
+height: 5vh;
+}
 .logo {
   max-height: 64px; // Maintain the navbar's height
   object-fit: contain; // Preserve the logo's aspect ratio
@@ -50,6 +82,8 @@ html {
 
 .navbar-burger span {
   background: $greyed-out;
+  // overflow: visible;
+  
 }
 
 .card, .input {
@@ -59,6 +93,10 @@ html {
 
 form .label {
   color: $black
+}
+.navbar-item {
+  color: antiquewhite;
+
 }
 
 form button {

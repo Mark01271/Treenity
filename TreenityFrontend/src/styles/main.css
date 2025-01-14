@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+:root {
+  --bulma-primary-h: 329deg;
+  --bulma-primary-s: 86%;
+  --bulma-primary-l: 47%;
+  --bulma-link-h: 32deg;
+  --bulma-link-s: 90%;
+  --bulma-link-l: 55%;
+  --bulma-info-h: 55deg;
+  --bulma-info-s: 88%;
+  --bulma-info-l: 53%;
+  --bulma-success-h: 0deg;
+  --bulma-success-s: 0%;
+  --bulma-success-l: 10%;
+  --bulma-warning-h: 0deg;
+  --bulma-warning-s: 0%;
+  --bulma-warning-l: 21%;
+  --bulma-danger-h: 0deg;
+  --bulma-danger-s: 0%;
+  --bulma-danger-l: 87%;
+}
+
+
+
+
+
+/* Additional styles */
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #ffffff;
+}
+.title{
+  text-align: center;
+ 
+}

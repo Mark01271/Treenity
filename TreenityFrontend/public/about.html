@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi siamo</title>
+    <link rel="stylesheet" href="../src/styles/about.css">
+   <!-- <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+> -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand"><a class="navbar-item" href="/cascina-giovane.it/home" onclick="navigateTo('/cascina-giovane.it/home')">
+      <img src="../src/images/cascina-caccia-logo.png" alt="" class="navbar-brand logo"></a></div>
+
+    <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+
+    <div id="navbarMenu" class="navbar-menu is-active">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/about.html">Chi siamo</a>
+        <a class="navbar-item" href="/attivita">Le nostre attività</a>
+        <a class="navbar-item" href="/richiesta-prenotazione.html">Prenota ora</a>
+        <a class="navbar-item" href="/richiesta-informazioni.html">Facci una domanda</a>
+        <a class="navbar-item" href="https://www.libera.it/" target="_blank">Tutto su Libera</a>
+      </div>
+    
+    </div>
+  </nav>
+    <section class="chi-siamo section is-large">
+        <h1 class="title has-text-centered has-text-black has-text-weight-bold is-size-3">Chi siamo</h1>
+        <section class="section is-medium ">
+          <div class="columns is-mobile content is-multiline is-centered">
+            <figure class="column is-two-fifths">
+              <img src="../src/images/cascinaCaccia_carla&bruno.png" alt="Carla e Bruno" class="is-two-fifths">
+            </figure>
+              <div class="column is-half"><strong class="has-text-black has-text-weight-bold">Cascina Caccia</strong> è un bene aperto al pubblico ed è animata dalla comunità di residenti e volontari che collaborando per il benessere sociale.</div>
+             <div class="column is-half">
+              <strong class="has-text-black has-text-weight-bold">Libera. Associazioni, nomi e numeri contro le mafie</strong> è nata il 25 marzo del 1995, con l’intento fare la propria parte per sollecitare l’impegno della <strong class="has-text-black has-text-weight-bold">società civile contro tutte le mafie.</strong> Fino ad oggi, hanno aderito a Libera più di <strong class="has-text-black has-text-weight-bold">1600 gruppi</strong> tra nazionali e locali, oltre a singoli sostenitori.
+             </div>
+             <figure class="column is-half">
+              <img src="../src/images/libera-contro-mafie.png" alt="Libera, associazioni, nomi e numeri contro le mafie" class="is-two-fifths">
+             </figure>
+             <figure class="column is-half">
+              <img src="../src/images/acmos.png" alt="Acmos" class="is-two-fifths">
+             </figure>
+             <div class="column is-half">
+              <strong class="has-text-black has-text-weight-bold">Acmos  è un’associazione apartitica e aconfessionale</strong> che promuove e sostiene l’inclusione e la <strong class="has-text-black has-text-weight-bold">partecipazione attiva, creativa e responsabile </strong>dei giovani alla vita democratica.
+          </div>
+          <button class="button is-primary mt-5">
+            <a href="https://www.libera.it/" target="_blank" class="has-text-white">Scopri di più su Libera</a>
+          </button>
+        </section>
+    </section>
+
+
+    <script type="module" src="/src/scripts/main.ts"></script>
+    <script type="module" src="/src/router.js"></script>
+    <script type="module" src="/src/scripts/chi-siamo.ts"></script>
+  </body>
+</html>
