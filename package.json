@@ -1,7 +1,4 @@
 {
-  "dependencies": {
-    "bulma": "^1.0.3"
-  },
   "devDependencies": {
     "sass": "^1.83.1"
   }
