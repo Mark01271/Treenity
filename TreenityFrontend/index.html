@@ -1,48 +1,147 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - Cascina Giovane</title>
-    <link rel="stylesheet" href="/src/assets/styles/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand"><a class="navbar-item" href="/cascina-giovane.it/home" onclick="navigateTo('/cascina-giovane,it/home')"><img src="src/images/cascina-caccia-logo.png" alt="" class="navbar-brand logo"></a></div>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a
+          class="navbar-item"
+          href="/cascina-giovane.it/home"
+          onclick="navigateTo('/cascina-giovane,it/home')"
+          ><img
+            src="src/images/cascina-caccia-logo.png"
+            alt=""
+            class="navbar-brand logo"
+        /></a>
+      </div>
 
-    <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
+      <a
+        class="navbar-burger"
+        role="button"
+        aria-label="menu"
+        aria-expanded="false"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
 
-    <div id="navbarMenu" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="/chi-siamo">Chi siamo</a>
-        <a class="navbar-item" href="/attivita">Le nostre attività</a>
-        <a class="navbar-item" href="/richiesta-prenotazione.html">Prenota ora</a>
-        <a class="navbar-item" href="/richiesta-informazioni.html">Facci una domanda</a>
-        <a class="navbar-item" href="https://www.libera.it/" target="_blank">Tutto su Libera</a>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/chi-siamo">Chi siamo</a>
+          <a class="navbar-item" href="/attivita">Le nostre attività</a>
+          <a class="navbar-item" href="/richiesta-prenotazione.html"
+            >Prenota ora</a
+          >
+          <a class="navbar-item" href="/richiesta-informazioni.html"
+            >Facci una domanda</a
+          >
+          <a class="navbar-item" href="https://www.libera.it/" target="_blank"
+            >Tutto su Libera</a
+          >
+        </div>
+      </div>
+    </header>
+    <section class="hero">
+      <div class="container">
+        <h1>In Ballo tra memoria e comunità</h1>
+        <img src="../src/images/cacciaballa.jpeg" alt="" />
+
+        <p>
+          Laboratori, progetti, giochi, lezioni di storia vita e attualità,
+          rinnovamento sociale e agricolo.
+        </p>
+
+        <button class="button is-fuchsia">Prenota un Evento</button>
+      </div>
+
+      <div class="container">
+        <h2>A caccia della libertà</h2>
+        <p>
+          Cascina Caccia, bene confiscato alla 'ndrangheta a San Sebastiano da
+          Po, è per sua natura un luogo in cui si respira un'aria di
+          trasformazione.<br /><br />
+          Grazie alla legge 109/96 da luogo di illegalità diventa un ambiente
+          dedicato all'educazione e al lavoro, volto a confezionare un prodotto
+          di alta qualità, attraverso metodi rispettosi dell'ambiente e della
+          salute delle api: acacia, millefiori, castagno e melata di bosco.
+          <br /><br />
+          Il rinnovamento sociale che ha visto ha attirato esposizioni
+          artistiche, concerti, visite educative, feste private per una
+          rinascita completa entrando a far parte del grande blocco Terra
+          Libera.
+        </p>
+      </div>
+      <section id="carousel-section">
+        <div id="carousel-demo" class="carousel">
+          <div class="item-1 carousel-item">
+            <img src="../src/images/cacciabn.jpg" alt="Image 1" />
+          </div>
+          <div class="item-2 carousel-item">
+            <img src="../src/images/eredita.jpg" alt="Image 2" />
+          </div>
+          <div class="item-3 carousel-item">
+            <img src="../src/images/famiglia.jpg" alt="Image 3" />
+          </div>
+          <div class="item-4 carousel-item">
+            <img src="../src/images/tribunale.jpg" alt="Image 4" />
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <p>
+          "Avere il potere e non esercitarlo è altrettanto grave che non averlo
+          ed esercitarlo”
+        </p>
+        <h2>Esplora il portale delle offerte educative!</h2>
+        <p>Hai qualche dubbio? Non esitare a chiamarci!</p>
+        <button class="button is-fuchsia">Contattaci!</button>
+      </div>
+    </section>
+  </body>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="box-a">
+        <h3>Dicono di noi</h3>
+        <ul>
+          <li>Lab</li>
+          <li>Gruppi</li>
+          <li>Eventi</li>
+          <li>Recensioni</li>
+          <li>News</li>
+        </ul>
+      </div>
+      <div class="box-a">
+        <h3>Cooperativa</h3>
+        <ul>
+          <li>Su di noi</li>
+          <li>Contatti</li>
+          <li>Lavora con noi</li>
+          <li>Storia</li>
+          <li>Blog</li>
+        </ul>
+      </div>
+      <div class="box-a">
+        <h3>Supporto</h3>
+        <ul>
+          <li>Normativa</li>
+          <li>Help center</li>
+          <li>Server status</li>
+          <li>Area Admin</li>
+        </ul>
       </div>
     </div>
-  </header>
-    <section class="hero">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    Title
-                </h1>
-                <h2 class="subtitle">
-                    subtitle
-                </h2>
-                <a href="/cascina-giovane.it/home" onclick="navigateTo('/cascina-giovane,it/home'); return false">test for routing</a>
-            </div>
-        </div>
-    </section>
-    <script type="module" src="/src/scripts/main.ts"></script>
-    <script type="module" src="/src/scripts/home.ts"></script>
-    <script type="module" src="/src/router.js"></script>
-</body>
+  </footer>
+  <script type="module" src="/src/scripts/main.ts"></script>
+  <script type="module" src="/src/scripts/home.ts"></script>
+  <script type="module" src="/src/router.js"></script>
 </html>
