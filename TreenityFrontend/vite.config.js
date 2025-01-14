@@ -58,6 +58,7 @@ export default defineConfig({
         secure: false, // to use HTTP instead of HTTPS
         rewrite: (path) => path.replace(/^\/api/, ''), // Remove /api prefix
       },
+
     },
   },
   css: {

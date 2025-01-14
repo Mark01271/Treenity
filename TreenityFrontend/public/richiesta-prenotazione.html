@@ -3,171 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Cascina Giovane</title>
+    <title>Prenota Ora - Cascina Giovane</title>
+    <!-- Block rendering until loader is ready -->
+    <script src="/block-render.js"></script>
+    <!-- Preload and load loader styles -->
+    <link rel="preload" href="/src/styles/loader.css" as="style">
+    <link rel="stylesheet" href="/src/styles/loader.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand"><a class="navbar-item" href="/cascina-giovane.it/home" onclick="navigateTo('/cascina-giovane,it/home')"><img src="src/images/cascina-caccia-logo.png" alt="" class="navbar-brand logo"></a></div>
-
-    <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-
-    <div id="navbarMenu" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="/chi-siamo">Chi siamo</a>
-        <a class="navbar-item" href="/attivita">Le nostre attività</a>
-        <a class="navbar-item" href="/richiesta-prenotazione.html">Prenota ora</a>
-        <a class="navbar-item" href="/richiesta-informazioni.html">Facci una domanda</a>
-        <a class="navbar-item" href="https://www.libera.it/" target="_blank">Tutto su Libera</a>
-      </div>
+    <div class="page-loader">
+        <div class="loader"></div>
     </div>
-  </header>
 
-          <div class="container">
-              <div class="columns is-centered">
-                  <div class="column is-half">
-                    <h1 class="title is-1 centered">
-                      Richiesta informazioni
-                    </h1>
-                    <h2 class="subtitle centered">
-                      Compila il form per farci qualsiasi domanda ti venga in mente!
-                    </h2>
-                  </div>
-              </div>
-          </div>
+    <header class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="../index.html">
+                <img src="src/images/cascina-caccia-logo.png" alt="Logo Cascina Caccia" class="navbar-brand logo">
+            </a>
+        </div>
+
+        <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="/chi-siamo">Chi siamo</a>
+                <a class="navbar-item" href="/attivita">Le nostre attività</a>
+                <a class="navbar-item" href="/richiesta-prenotazione.html">Prenota ora</a>
+                <a class="navbar-item" href="/richiesta-informazioni.html">Facci una domanda</a>
+                <a class="navbar-item" href="https://www.libera.it/" target="_blank">Tutto su Libera</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-half">
+                <h1 class="title is-1 centered">
+                    Richiesta informazioni
+                </h1>
+                <h2 class="subtitle centered">
+                    Compila il form per farci qualsiasi domanda ti venga in mente!
+                </h2>
+            </div>
+        </div>
+    </div>
 
     <section class="hero is-fullheight-with-navbar">
-      <div class="hero-body">
-        <div class="container">
-          <div class="card is-centered">
-            <div class="card-content">
-              <form action="#" method="POST" class="form">
-                <div class="field">
-                  <label class="label" for="nome">Nome Contatto</label>
-                  <div class="control">
-                    <input id="nome" name="nome" class="input" type="text"" required>
-                  </div>
-                </div>
-  
-                <div class="field">
-                  <label class="label" for="email">Email</label>
-                  <div class="control">
-                    <input id="email" name="email" class="input" type="email" required>
-                  </div>
-                </div>
-  
-                <div class="field">
-                  <label class="label" for="phone">Telefono</label>
-                  <div class="control">
-                    <input type="tel" id="phone" name="phone" class="input" placeholder="+39" value="+39" required>
-                  </div>
-                </div>
+        <div class="hero-body">
+            <div class="container">
+                <div class="card is-centered">
+                    <div class="card-content">
+                        <form action="#" method="POST" class="form">
+                            <div class="field">
+                                <label class="label" for="nome">Nome Contatto</label>
+                                <div class="control">
+                                    <input id="nome" name="nome" class="input" type="text"" required>
+                                </div>
+                            </div>
 
-                <div class="field">
-                  <label class="label" for="nome">Nome Comitiva</label>
-                  <div class="control">
-                    <input id="nome-comitiva" name="nome-comitiva" class="input" type="text"" required>
-                  </div>
-                </div>
-  
-                <div class="field">
-                  <label class="label" for="dropdown">Tipo Comitiva</label>
-                  <div class="control">
-                    <div class="select is-fullwidth">
-                      <select id="dropdown" name="dropdown" required>
-                        <option value="" disabled selected>Seleziona un'opzione</option>
-                        <option value="SCUOLA">Scuola</option>
-                        <option value="SCOUT">Scout</option>
-                        <option value="GRUPPI_PARROCCHIALI">Gruppi Parrocchiali</option>
-                        <option value="ORGANIZZAZIONI">Organizzazioni</option>
-                        <option value="FAMIGLIA">Famiglia</option>
-                        <option value="GRUPPO_EVENTI">Gruppo Eventi</option>
-                        <option value="ALTRO">Altro</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
+                            <div class="field">
+                                <label class="label" for="email">Email</label>
+                                <div class="control">
+                                    <input id="email" name="email" class="input" type="email" required>
+                                </div>
+                            </div>
 
-                <div class="field">
-                  <label class="label" for="data">Disponibilità Data</label>
-                  <div class="control">
-                      <input id="data" name="data" class="input" type="date" required>
-                  </div>
-                </div>
+                            <div class="field">
+                                <label class="label" for="phone">Telefono</label>
+                                <div class="control">
+                                    <input type="tel" id="phone" name="phone" class="input" placeholder="+39" value="+39" required>
+                                </div>
+                            </div>
 
-                <div class="field">
-                  <label class="label" for="orario">Disponibilità Oraria</label>
-                  <div class="control has-icons-right">
-                    <div class="select is-fullwidth">
-                      <select id="orario" name="orario" class="input tickless" required>
-                        <option value="" disabled selected>Seleziona un'opzione</option>
-                        <option value="Mattina">Mattina</option>
-                        <option value="Pomeriggio">Pomeriggio</option>
-                        <option value="Giornata">Giornata</option>
-                      </select>
-                    </div>
-                    <!-- <span class="icon is-right">
-                      <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.5 5.66667V9L11 11.5M16 9C16 13.1421 12.6421 16.5 8.5 16.5C4.35786 16.5 1 13.1421 1 9C1 4.85786 4.35786 1.5 8.5 1.5C12.6421 1.5 16 4.85786 16 9Z" stroke="#4A4A4A" stroke-width="1.37" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </span> -->
-                  </div>
-                </div>
-                
-  
-                <fieldset>
-                  <div class="field">
-                    <label class="label" for="informazioni">Intento dell'intervento</label>
-                    <legend>Dicci cosa cerchi dall'esperienza presso <b>Cascina Caccia!</b></legend>
-                    <div class="control">
-                      <textarea id="informazioni" name="informazioni" class="textarea" placeholder="Scrivi qui..." required></textarea>
-                    </div>
-                  </div>
-                </fieldset>
+                            <div class="field">
+                                <label class="label" for="nome">Nome Comitiva</label>
+                                <div class="control">
+                                    <input id="nome-comitiva" name="nome-comitiva" class="input" type="text"" required>
+                                </div>
+                            </div>
 
-                <fieldset>
-                  <div class="field">
-                    <label class="label" for="informazioni-aggiuntive">Richieste aggiuntive</label>
-                    <legend>Rendici al corrente di eventuali necessità, come accessibilità o allergie!</legend>
-                    <div class="control">
-                      <textarea id="informazioni-aggiuntive" name="informazioni-aggiuntive" class="textarea" placeholder="Scrivi qui..."></textarea>
+                            <div class="field">
+                                <label class="label" for="dropdown">Tipo Comitiva</label>
+                                <div class="control">
+                                    <div class="select is-fullwidth">
+                                        <select id="dropdown" name="dropdown" required>
+                                            <option value="" disabled selected>Seleziona un'opzione</option>
+                                            <option value="SCUOLA">Scuola</option>
+                                            <option value="SCOUT">Scout</option>
+                                            <option value="GRUPPI_PARROCCHIALI">Gruppi Parrocchiali</option>
+                                            <option value="ORGANIZZAZIONI">Organizzazioni</option>
+                                            <option value="FAMIGLIA">Famiglia</option>
+                                            <option value="GRUPPO_EVENTI">Gruppo Eventi</option>
+                                            <option value="ALTRO">Altro</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label" for="data">Disponibilità Data</label>
+                                <div class="control">
+                                    <input id="data" name="data" class="input" type="date" required>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label" for="orario">Disponibilità Oraria</label>
+                                <div class="control has-icons-right">
+                                    <div class="select is-fullwidth">
+                                        <select id="orario" name="orario" class="input tickless" required>
+                                            <option value="" disabled selected>Seleziona un'opzione</option>
+                                            <option value="Mattina">Mattina</option>
+                                            <option value="Pomeriggio">Pomeriggio</option>
+                                            <option value="Giornata">Giornata</option>
+                                        </select>
+                                    </div>
+                                    <!-- <span class="icon is-right">
+                                        <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.5 5.66667V9L11 11.5M16 9C16 13.1421 12.6421 16.5 8.5 16.5C4.35786 16.5 1 13.1421 1 9C1 4.85786 4.35786 1.5 8.5 1.5C12.6421 1.5 16 4.85786 16 9Z" stroke="#4A4A4A" stroke-width="1.37" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span> -->
+                                </div>
+                            </div>
+                            
+
+                            <fieldset>
+                                <div class="field">
+                                    <label class="label" for="informazioni">Intento dell'intervento</label>
+                                    <legend>Dicci cosa cerchi dall'esperienza presso <b>Cascina Caccia!</b></legend>
+                                    <div class="control">
+                                        <textarea id="informazioni" name="informazioni" class="textarea" placeholder="Scrivi qui..." required></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <div class="field">
+                                    <label class="label" for="informazioni-aggiuntive">Richieste aggiuntive</label>
+                                    <legend>Rendici al corrente di eventuali necessità, come accessibilità o allergie!</legend>
+                                    <div class="control">
+                                        <textarea id="informazioni-aggiuntive" name="informazioni-aggiuntive" class="textarea" placeholder="Scrivi qui..."></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="field">
+                                <div class="control">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="terms" required>
+                                        Accetto i termini e le condizioni
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="newsletter">
+                                        Voglio ricevere aggiornamenti via email
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                    <button class="button is-fuchsia" type="submit">Invia</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                  </div>
-                </fieldset>
-  
-                <div class="field">
-                  <div class="control">
-                    <label class="checkbox">
-                      <input type="checkbox" name="terms" required>
-                      Accetto i termini e le condizioni
-                    </label>
-                  </div>
                 </div>
-  
-                <div class="field">
-                  <div class="control">
-                    <label class="checkbox">
-                      <input type="checkbox" name="newsletter">
-                      Voglio ricevere aggiornamenti via email
-                    </label>
-                  </div>
-                </div>
-  
-                <div class="field">
-                  <div class="control">
-                    <button class="button" type="submit">Invia</button>
-                  </div>
-                </div>
-              </form>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <script type="module" src="/src/scripts/main.ts"></script>

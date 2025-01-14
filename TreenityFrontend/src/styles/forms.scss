@@ -2,12 +2,6 @@
 @use "bulma";
 @use "bulma/sass/utilities/initial-variables";
 
-// Import Normalize.css
-@import 'normalize.css/normalize.css';
-
-// Import Montserrat Google Font
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
 // Set brand colors
 $fuchsia: #e1117e;
 $orange: #f49526;
@@ -67,6 +61,11 @@ html {
   background: $card-background-color;
   border-radius: 16px;
   box-shadow: 0px 0px 28px 0px $greyed-out;
+  
+  @media screen and (min-width: 769px) {
+    margin: 0 auto;
+    width: 50%;
+  }
 }
 
 .input, .textarea, .select select {

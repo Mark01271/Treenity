@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const formData = new FormData(e.target as HTMLFormElement);
     
-    // Debug: Log all form values
+    // Log form data to check what we're sending
     formData.forEach((value, key) => {
       console.log(`${key}: ${value}`);
     });

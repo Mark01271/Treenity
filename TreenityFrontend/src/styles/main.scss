@@ -11,6 +11,7 @@
 
 // Set brand colors
 $fuchsia: #e1117e;
+$fuchsia-hover: #b30e64;
 $orange: #f49526;
 $yellow: #f0df1c;
 $black: #1a1a1a;
@@ -65,3 +66,18 @@ form button {
   background: $fuchsia;
   color: $white;
 }
+
+.button.is-fuchsia {
+  background-color: $fuchsia;
+  color: white;
+  
+  &:hover {
+    background-color: $fuchsia-hover;
+  }
+
+  &:focus {
+    color: white;
+  }
+}
+
+@import 'loader';

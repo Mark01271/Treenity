@@ -3,30 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Cascina Giovane</title>
+    <title>Richiedi Informazioni - Cascina Giovane</title>
+    <!-- Block rendering until loader is ready -->
+    <script src="/block-render.js"></script>
+    <!-- Preload and load loader styles -->
+    <link rel="preload" href="/src/styles/loader.css" as="style">
+    <link rel="stylesheet" href="/src/styles/loader.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand"><a class="navbar-item" href="/cascina-giovane.it/home" onclick="navigateTo('/cascina-giovane,it/home')"><img src="src/images/cascina-caccia-logo.png" alt="" class="navbar-brand logo"></a></div>
-
-    <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-
-    <div id="navbarMenu" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="/chi-siamo">Chi siamo</a>
-        <a class="navbar-item" href="/attivita">Le nostre attività</a>
-        <a class="navbar-item" href="/richiesta-prenotazione.html">Prenota ora</a>
-        <a class="navbar-item" href="/richiesta-informazioni.html">Facci una domanda</a>
-        <a class="navbar-item" href="https://www.libera.it/" target="_blank">Tutto su Libera</a>
-      </div>
+    <div class="page-loader">
+        <div class="loader"></div>
     </div>
-  </header>
+    <header class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="../index.html">
+                <img src="src/images/cascina-caccia-logo.png" alt="Logo Cascina Caccia" class="navbar-brand logo">
+            </a>
+        </div>
+
+        <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="/chi-siamo">Chi siamo</a>
+            <a class="navbar-item" href="/attivita">Le nostre attività</a>
+            <a class="navbar-item" href="/richiesta-prenotazione.html">Prenota ora</a>
+            <a class="navbar-item" href="/richiesta-informazioni.html">Facci una domanda</a>
+            <a class="navbar-item" href="https://www.libera.it/" target="_blank">Tutto su Libera</a>
+          </div>
+        </div>
+    </header>
 
           <div class="container">
               <div class="columns is-centered">
@@ -112,7 +124,7 @@
   
                 <div class="field">
                   <div class="control">
-                    <button class="button" type="submit">Invia</button>
+                    <button class="button is-fuchsia" type="submit">Invia</button>
                   </div>
                 </div>
               </form>
@@ -123,6 +135,7 @@
     </section>
 
     <script type="module" src="/src/scripts/main.ts"></script>
+    <script type="module" src="/src/scripts/forms.ts"></script>
     <script type="module" src="/src/scripts/info-request.ts"></script>
     <script type="module" src="/src/router.js"></script>
 </body>
