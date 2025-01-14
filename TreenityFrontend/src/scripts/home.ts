@@ -1,22 +1,31 @@
-// src/scripts/home.ts
+//Import home.scss file
+import "/src/styles/home.scss";
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Example: Fetching data from the backend API
-  fetch('http://localhost:8080/api/your-endpoint')
-      .then(response => response.json())
-      .then(data => {
-          console.log('Data from backend:', data);
-          // Update the DOM with the fetched data
-      })
-      .catch(error => {
-          console.error('Error fetching data:', error);
-      });
+import bulmaCarousel from "bulma-carousel/dist/js/bulma-carousel.min.js";
 
-  // Example: Adding an event listener to a button
-  const button = document.getElementById('exampleButton');
-  if (button) {
-      button.addEventListener('click', () => {
-          alert('Button clicked!');
-      });
-  }
+const carouselOptions = {
+  slidesToScroll: 1,
+  slidesToShow: 1.3,
+  pagination: false,
+  navigationKeys: true,
+  loop: true,
+  breakpoints: [
+    { changePoint: 480, slidesToShow: 1, slidesToScroll: 1 },
+    { changePoint: 768, slidesToShow: 1, slidesToScroll: 1 },
+    { changePoint: 1024, slidesToShow: 1, slidesToScroll: 1 },
+    { changePoint: 1280, slidesToShow: 1, slidesToScroll: 1 }
+  ]
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Initialize carousel
+  const carousels = bulmaCarousel.attach("#carousel-demo", carouselOptions);
+
+  // Optional: For debugging
+  console.log("Carosello funziona:", carousels);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const carousels = bulmaCarousel.attach("#carousel-demo", carouselOptions);
 });
