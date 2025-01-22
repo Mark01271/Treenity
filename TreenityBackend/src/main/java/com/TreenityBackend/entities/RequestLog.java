@@ -38,4 +38,7 @@ public class RequestLog {
 
     @Column(name = "updated_at", insertable = false, updatable = false)
     private LocalDateTime updatedAt;
+    
+    @Column(name = "related_request_id")
+    private Integer relatedRequestId;
 }
