@@ -28,6 +28,8 @@ CREATE TABLE IF NOT EXISTS Request_Logs (
   FOREIGN KEY (status_id) REFERENCES Statuses(id) -- Link to Statuses table
 );
 
+ALTER TABLE request_logs ADD COLUMN related_request_id INT;
+
 -- Table for Info Requests
 CREATE TABLE IF NOT EXISTS Info_Requests (
   id INT PRIMARY KEY AUTO_INCREMENT, -- Unique identifier for each request
