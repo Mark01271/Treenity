@@ -6,9 +6,14 @@ import java.util.List;
 import java.util.Optional;
 
 public interface RequestLogService {
+    // Crea un nuovo RequestLog
     RequestLog createRequestLog(Object request, Integer adminId);
+    // Ottieni tutti i RequestLog
     List<RequestLog> getAllLogs();
+    // Ottieni un RequestLog per ID
     Optional<RequestLog> getLogById(Integer id);
-    RequestLog saveLog(RequestLog requestLog);  // Metodo per salvare un log
+    // Salva un RequestLog
+    RequestLog saveLog(RequestLog requestLog);  
+    // Aggiorna un RequestLog
     RequestLog updateRequestLog(Integer id, RequestLog updatedRequestLog);
 }
