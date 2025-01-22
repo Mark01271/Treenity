@@ -1,6 +1,5 @@
 manca/da completare:
 tecnologie utilizzate (frontend)
-repos
 esecuzione
 
 
@@ -160,37 +159,29 @@ Rappresenta un amministratore registrato alla piattaforma:
 <br>
 <hr>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Repos (DAO)
 
 Le interfacce DAO (Data Access Object) sono utilizzate per accedere al database. Ogni entità ha un repository dedicato per semplificare le operazioni di ricerca e modifica dei dati del database.
 
 ### **AppointmentRequestDAO**
 
-- 
+- findByRequestLog_Id: trova una l'appointment request contenente una request log dato l'id.
+- findByAvailabilityDateContaining: controlla se la data inserita è disponibile per una visita .
+- findByAvailabilityTime: controlla se l'orario inserito è disponibile per una visita. 
+- findAllByOrderByCreatedAtDesc: trova tutti gli appuntamenti ordinati dalla data di creazione in ordine decrescente.
 
 ### **InfoRequestDAO**
 
-- 
+- findByRequestLog_Id: trova una info request basandosi sull'id.
+- findByGroupName: trova una info request basandosi sul nome del gruppo.
+- findByNewsletterTrue: trova tutte le info request nel quale il campo newsletter è stato impostato True.  
+- findAllByOrderByCreatedAtDesc: trova tutte le info request ordinate dalla data di creazione in ordine decrescente.
 
 ### **RequestLogDAO**
 
-- 
+- findByUpdatedBy_Id: Trova i log aggiornati da uno specifico Admin.
+- findByStatus_Id: Trova i log con uno specifico stato.
+- findAllByOrderByUpdatedAtDesc: Ordina i log per data di aggiornamento decrescente
 
 ### **StatusEntityDAO**
 
@@ -279,7 +270,7 @@ Logica per codifica delle password degli amministratori e filtri di sicurezza e 
 
 ## Esecuzione del Progetto
 
-1. **Requisiti**: assicurarsi di avere installato Java 11 o superiore e di avere il database configurato correttamente.
+1. **Requisiti**: assicurarsi di avere installato Java 11 o superiore, java springboot versione 3.4 o superiore, la libreria Lombok e di avere il database configurato correttamente. 
 2. **Configurazione**: verificare le configurazioni del database nel file `src/main/resources/application.properties`:
 ```java
 spring.application.name=TreenityBackend // indica il nome del progetto
