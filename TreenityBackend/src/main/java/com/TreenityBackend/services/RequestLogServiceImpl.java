@@ -1,14 +1,18 @@
 package com.TreenityBackend.services;
 
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
 import com.TreenityBackend.entities.Admin;
+import com.TreenityBackend.entities.AppointmentRequest;
+import com.TreenityBackend.entities.InfoRequest;
 import com.TreenityBackend.entities.RequestLog;
 import com.TreenityBackend.entities.StatusEntity;
 import com.TreenityBackend.repos.RequestLogDAO;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
@@ -26,10 +30,19 @@ public class RequestLogServiceImpl implements RequestLogService {
         StatusEntity status = statusEntityService.getStatusByName(StatusEntity.StatusName.received)
                 .orElseThrow(() -> new RuntimeException("Status not found"));
 
+        Integer relatedRequestId = null;
+
+        if (request instanceof AppointmentRequest) {
+            relatedRequestId = ((AppointmentRequest) request).getId();  // Ottieni l'ID dell'AppointmentRequest
+        } else if (request instanceof InfoRequest) {
+            relatedRequestId = ((InfoRequest) request).getId();  // Ottieni l'ID dell'InfoRequest
+        }
+
         RequestLog requestLog = RequestLog.builder()
                 .updatedBy(admin)
                 .status(status)
                 .comment("Nuova richiesta generata")
+                .relatedRequestId(relatedRequestId)  // Aggiungi l'ID della richiesta
                 .build();
 
         return requestLogDao.save(requestLog);
