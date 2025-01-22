@@ -20,7 +20,6 @@ import com.TreenityBackend.services.EmailService;
 import com.TreenityBackend.services.RequestLogService;
 import com.TreenityBackend.services.StatusEntityService;
 
-
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -44,30 +43,35 @@ public class AppointmentRequestController {
         StatusEntity status = statusEntityService.getStatusByName(StatusEntity.StatusName.received)
                 .orElseThrow(() -> new RuntimeException("Status non trovato"));
 
-        // Crea un nuovo RequestLog
+        // Crea un nuovo RequestLog preliminare
         RequestLog requestLog = RequestLog.builder()
                 .comment("Richiesta creata dal form")
                 .status(status)
                 .build();
 
-        // Salva il RequestLog nel database
+        // Salva il RequestLog preliminare
         RequestLog savedRequestLog = requestLogService.saveLog(requestLog);
 
-        // Assegna il RequestLog alla richiesta di appuntamento
+        // Assegna il RequestLog preliminare alla richiesta
         request.setRequestLog(savedRequestLog);
 
         // Salva la richiesta di appuntamento
         AppointmentRequest savedRequest = appointmentRequestService.saveAppointmentRequest(request);
 
+        // Aggiorna il RequestLog con l'ID della richiesta salvata
+        savedRequestLog.setRelatedRequestId(savedRequest.getId());
+        requestLogService.saveLog(savedRequestLog);
+
         // Invia la conferma all'utente
         emailService.sendUserConfirmationEmail(request.getEmail());
 
-        // Invia notifica all'amministratore
+        // Invia notifica all'amministratore con l'ID della richiesta
         String requestDetails = "Nuova richiesta di appuntamento:\n\n" +
-                "Gruppo: " + request.getGroupName() + "\n" +
-                "Contatto: " + request.getContactPerson() + "\n" +
-                "Email: " + request.getEmail() + "\n" +
-                "Telefono: " + request.getPhone();
+                "ID richiesta: " + savedRequest.getId() + "\n" +
+                "Gruppo: " + savedRequest.getGroupName() + "\n" +
+                "Contatto: " + savedRequest.getContactPerson() + "\n" +
+                "Email: " + savedRequest.getEmail() + "\n" +
+                "Telefono: " + savedRequest.getPhone();
         emailService.sendAdminNotificationEmail("provatreenity@gmail.com", requestDetails);
 
         return savedRequest;
