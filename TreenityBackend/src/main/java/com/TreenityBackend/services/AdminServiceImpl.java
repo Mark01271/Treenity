@@ -63,16 +63,19 @@ public class AdminServiceImpl implements AdminService {
         return adminDAO.save(admin);
     }
 
+	// Controlla se esiste un admin con email
     @Override
     public boolean existsByEmail(String email) {
         return adminDAO.existsByEmail(email);
     }
 
+    // Controlla se esiste un admin con username
     @Override
     public boolean existsByUsername(String username) {
         return adminDAO.existsByUsername(username);
     }
 
+	// Trova admin in base alla sua mail 
     @Override
     public Optional<Admin> getAdminByEmail(String email) {
         return adminDAO.findByEmail(email)
@@ -81,6 +84,7 @@ public class AdminServiceImpl implements AdminService {
                 });
     }
 
+	// Trova admin in base al suo username
     @Override
     public Optional<Admin> getAdminByUsername(String username) {
         return adminDAO.findByUsername(username)
@@ -89,6 +93,7 @@ public class AdminServiceImpl implements AdminService {
                 });
     }
 
+	// Trova admin in base al suo id
     @Override
     public Optional<Admin> getAdminById(Integer id) {
         return adminDAO.findById(id)
@@ -97,11 +102,13 @@ public class AdminServiceImpl implements AdminService {
                 });
     }
 
+	// Trova tutti gli admin
     @Override
     public List<Admin> getAllAdmins() {
         return adminDAO.findAll();
     }
 
+    // Elimina un admin in base al suo id
     @Override
     public void deleteAdmin(Integer id) {
         if (!adminDAO.existsById(id)) {

@@ -20,17 +20,20 @@ public class AppointmentRequestServiceImpl implements AppointmentRequestService 
     private final AppointmentRequestDAO appointmentRequestDAO;
     private final RequestLogDAO requestLogDAO;
 
+    //Recupera tutte le richieste di appuntamento
     @Override
     public List<AppointmentRequest> getAllAppointmentRequests() {
         return appointmentRequestDAO.findAll();
     }
 
+    // Recupera una richiesta di appuntamento specifica in base al suo ID
     @Override
     public Optional<AppointmentRequest> getAppointmentRequestById(Integer id) {
         return Optional.of(appointmentRequestDAO.findById(id)
                 .orElseThrow(() -> new AppointmentRequestNotFoundException("AppointmentRequest con ID " + id + " non trovato")));
     }
 
+    // Recupera tutte le richieste di appuntamento associate a un determinato log ID
     @Override
     public List<AppointmentRequest> getAppointmentRequestsByRequestLogId(Integer logId) {
         if (logId == null) {
@@ -43,6 +46,7 @@ public class AppointmentRequestServiceImpl implements AppointmentRequestService 
         return requests;
     }
 
+    // Salva una nuova richiesta di appuntamento
     @Override
     public AppointmentRequest saveAppointmentRequest(AppointmentRequest appointmentRequest) {
         if (appointmentRequest == null) {
@@ -51,6 +55,7 @@ public class AppointmentRequestServiceImpl implements AppointmentRequestService 
         return appointmentRequestDAO.save(appointmentRequest);
     }
 
+    // Aggiorna lo stato di una richiesta di appuntamento
     @Override
     public AppointmentRequest updateAppointmentRequestStatus(AppointmentRequest appointmentRequest, Integer statusId) {
         if (appointmentRequest == null || statusId == null) {

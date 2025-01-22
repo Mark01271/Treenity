@@ -31,5 +31,6 @@ public interface AdminService {
     // Elimina un admin in base al suo id
     void deleteAdmin(Integer id);
 
+    //cambia la password per id controllando la validità della vecchia password
 	String changePassword(Integer id, String oldPassword, String newPassword);
 }
