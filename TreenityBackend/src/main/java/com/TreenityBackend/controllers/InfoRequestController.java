@@ -59,11 +59,16 @@ public class InfoRequestController {
         // 6. Salvataggio della InfoRequest
         InfoRequest savedRequest = infoRequestService.saveInfoRequest(request);
 
-        // 7. Invio della conferma all'utente via email
+        // 7. Aggiungi il relatedRequestId al RequestLog appena creato
+        savedRequestLog.setRelatedRequestId(savedRequest.getId());  // Collega l'ID della InfoRequest al RequestLog
+        requestLogService.saveLog(savedRequestLog);  // Ritorna il log aggiornato
+
+        // 8. Invio della conferma all'utente via email
         emailService.sendUserConfirmationEmail(request.getEmail());
 
-        // 8. Invio della notifica all'amministratore
+        // 9. Invio della notifica all'amministratore con l'ID della richiesta
         String requestDetails = "Nuova richiesta di informazioni:\n\n" +
+                "ID richiesta: " + savedRequest.getId() + "\n" +  // Aggiungi l'ID della richiesta
                 "Gruppo: " + request.getGroupName() + "\n" +
                 "Contatto: " + request.getContactPerson() + "\n" +
                 "Email: " + request.getEmail() + "\n" +
