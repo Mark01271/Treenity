@@ -49,7 +49,7 @@ public class SecurityConfig {
            //     .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()) // Usa un token CSRF conservato nei cookie
            //     .ignoringRequestMatchers("/public/**") // Percorsi esclusi dal controllo CSRF
            //     .requireCsrfProtectionMatcher(request -> 
-           //         request.getRequestURI().matches("/public/form1|/public/form2")) //reimposta il controllo csrf nel caso dei form TODO: path temporanei da aggiornare una volta ricevuti i path veri
+           //         request.getRequestURI().matches(" /public/richiesta-prenotazione.html|/public/richiesta-informazioni.html")) //reimposta il controllo csrf nel caso dei form TODO: path temporanei da aggiornare una volta ricevuti i path veri
            //)
            // Configura gli accessi alle risorse
             .csrf(csrf -> csrf
