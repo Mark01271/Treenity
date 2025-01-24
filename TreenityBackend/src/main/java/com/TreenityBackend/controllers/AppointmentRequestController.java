@@ -63,7 +63,7 @@ public class AppointmentRequestController {
         requestLogService.saveLog(savedRequestLog);
 
         // Invia la conferma all'utente
-        emailService.sendUserConfirmationEmail(request.getEmail());
+        emailService.sendUserConfirmationEmail(request.getEmail(), request.getContactPerson());
 
         // Invia notifica all'amministratore con l'ID della richiesta
         String requestDetails = "Nuova richiesta di appuntamento:\n\n" +

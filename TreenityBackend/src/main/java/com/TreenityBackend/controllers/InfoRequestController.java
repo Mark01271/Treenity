@@ -64,7 +64,7 @@ public class InfoRequestController {
         requestLogService.saveLog(savedRequestLog);  // Ritorna il log aggiornato
 
         // 8. Invio della conferma all'utente via email
-        emailService.sendUserConfirmationEmail(request.getEmail());
+        emailService.sendUserConfirmationEmail(request.getEmail(), request.getContactPerson());
 
         // 9. Invio della notifica all'amministratore con l'ID della richiesta
         String requestDetails = "Nuova richiesta di informazioni:\n\n" +
