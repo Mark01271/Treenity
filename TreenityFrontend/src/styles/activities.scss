@@ -41,7 +41,13 @@ h3 {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 1rem;
+  margin: 1em, 2em, 2em 0;
+}
+
+.container img {
+  width: 90%;
+  height: auto;
+  margin: 1rem 2rem 0 2rem;
 }
 
 button {
@@ -51,10 +57,10 @@ button {
   background-color: $fuchsia;
 }
 
-img {
-  width: auto;
-  height: 300px;
-}
+// img {
+//   width: auto;
+//   height: 300px;
+// }
 
 p {
   color: $black;
