@@ -6,9 +6,9 @@ function navigateTo(path) {
 
 // Define your routes
 page('/', () => {});
-page('/cascina-giovane/home', () => {});
-page('/cascina-giovane/about', () => {});
-
+page('/cascina-giovane.it/home', () => {});
+page('/cascina-giovane.it/chi-siamo', () => {});
+// page('chi-siamo', () => {});
 // Start the router
 page();
 

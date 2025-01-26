@@ -37,19 +37,12 @@ html {
   background-size: cover;
   background-blend-mode:difference;
   // overflow: visible;
+  overflow-y: visible;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
-.navbar-start{
-    &.is-active{
-        display: flex;
-        flex-direction: column;
-        margin-top: 32vh;
-        width: 100%;
-        background-color: #ddd;
-    }
-}
+
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -80,34 +73,62 @@ html {
   display: flex;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1024px) {
   .navbar-burger {
     display: block;
   }
 
-  .navbar-menu {
-    display: none;
-  }
+  .navbar-start{
+    
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-evenly;
+        align-items: center;
+        width: auto;
+        // background-color: #ddd;
+    
+}
+
+    .navbar-menu {
+      display: none;
+    }
 
   .navbar-menu.is-active {
+    height: fit-content;
     display: flex;
     flex-direction: column;
-    margin-top: 32vh;
-    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 50%;
+    width: auto;
     background-color: #ddd;
+  }
+}
+@media (min-width: 1025px) {
+
+  .navbar-menu.is-active {
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 50%;
+    width: 100%;
+    background-color: transparent;
   }
 }
 
 #navbarMenu{
     padding: 0;
     &.is-active {
-            margin-top: 32vh;
-            width: 100%; 
-            font-size: 70%;
-            display: flex;
+      box-shadow: 0px -4px 8px 3px rgb(207, 207, 207);
+            margin-top: 100%;
+            font-size: 16px;
+            width: auto;
+            height: auto; 
+            display: block;
             flex-direction: column;
-            justify-content: space-between;
-            border-bottom: 1px solid $white;
+            justify-content: center;
+            // border:1px solid $greyed-out;
+            border-radius:1.618em;
             // color: antiquewhite;
             background-color: #ddd;
         }
@@ -137,16 +158,19 @@ html {
 .navbar-item{
   display: flex;
   flex-direction: column;    
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
+    align-items: center;
+   &:hover{ 
+    border-left: 2px solid $orange;
+   }
+   box-sizing: content-box;
+   height: auto;
+   width: fit-content;
+  //  gap: 30px;
   text-align: center;
-  height: 5vh
-}
-.navbar-start{
-  display: flex;
-  // flex-direction: column;
-  justify-content: center;
-  height: 100%;
+  
+  // overflow: scroll;
+height: 5vh
 }
 .logo {
   max-height: 64px; // Maintain the navbar's height

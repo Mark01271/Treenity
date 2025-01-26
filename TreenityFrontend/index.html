@@ -6,6 +6,7 @@
     <title>Home - Cascina Giovane</title>
     <link rel="stylesheet" href="./src/styles/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" src="/src/scripts/main.ts"></script>
 </head>
 <body>
   <header class="navbar" role="navigation" aria-label="main navigation">
@@ -20,7 +21,7 @@
 
     <div id="navbarMenu" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" href="/about.html">Chi siamo</a>
+        <a class="navbar-item" href="./chi-siamo.html">Chi siamo</a>
         <a class="navbar-item" href="/attivita">Le nostre attività</a>
         <a class="navbar-item" href="/richiesta-prenotazione.html">Prenota ora</a>
         <a class="navbar-item" href="/richiesta-informazioni.html">Facci una domanda</a>
@@ -28,21 +29,20 @@
       </div>
     </div>
   </header>
-    <section class="hero">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    Title
-                </h1>
-                <h2 class="subtitle">
-                    subtitle
-                </h2>
-                <a href="/cascina-giovane.it/home" onclick="navigateTo('/cascina-giovane.it/home'); return false">test for routing</a>
-            </div>
-        </div>
-    </section>
-    <script type="module" src="/src/scripts/main.ts"></script>
-    <script type="module" src="/src/scripts/home.ts"></script>
-    <script type="module" src="/src/router.js"></script>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Title
+        </h1>
+        <h2 class="subtitle">
+          subtitle
+        </h2>
+        <a href="/cascina-giovane.it/home" onclick="navigateTo('/cascina-giovane.it/home'); return false">test for routing</a>
+      </div>
+    </div>
+  </section>
+  <script type="module" src="/src/scripts/home.ts"></script>
+  <script type="module" src="/src/router.js"></script>
 </body>
 </html>
