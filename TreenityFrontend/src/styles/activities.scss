@@ -4,27 +4,9 @@
 
 // Import Normalize.css
 // @import "normalize.css/normalize.css";
+@import "main.scss";
 
-$fuchsia: #e1117e;
-$grey: #cecccc;
-$orange: #f49526;
-$yellow: #f0df1c;
-$black: #1a1a1a;
-$greyed-out: #363636;
-$white: #ddd;
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-family: "Montserrat", sans-serif;
-}
-body {
-  background-color: $white;
-}
-
+//style for activities page
 h1 {
   text-align: center;
   font-size: 3em;
@@ -41,20 +23,12 @@ h2 {
 button {
   margin-top: 1rem;
 }
-.is-fuchsia {
-  background-color: $fuchsia;
-}
-
-// img {
-//   width: auto;
-//   height: 300px;
-// }
 
 p {
   color: $black;
 }
 
-.container {
+.container-activities {
   display: flex;
   flex-direction: column;
   align-items: center;

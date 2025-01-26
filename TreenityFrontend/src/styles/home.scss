@@ -3,136 +3,15 @@
 // Use node_modules path
 @use "bulma/sass/utilities";
 
-// Set brand colors
+@import "main.scss";
 
-$fuchsia: #e1117e;
-$grey: #cecccc;
-$orange: #f49526;
-$yellow: #f0df1c;
-$black: #1a1a1a;
-$greyed-out: #363636;
-$white: #ddd;
-
-// Additional styles
-* {
-  box-sizing: border-box;
-}
-
-html {
-  font-family: "Montserrat", sans-serif;
-  background: #ddd;
-}
-
-.container img {
-  width: 130vh;
-  height: 65vh;
-}
-
-//Aggiunte Fra
-h1,
-h2 {
-  text-align: center;
-  font-size: 3em;
-  font-weight: bold;
-  color: $greyed-out;
-}
-
-.container {
+//Stili per la home
+.container-home {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-#carousel-section {
-  width: 30rem;
-  height: 80%;
-  margin: 0 auto;
-  border-radius: 10px;
-  background-color: $grey;
-
-  .carousel-item {
-    height: 12rem;
-    width: 12rem;
-  }
-
-  div {
-    margin: 0 auto;
-
-    img {
-      object-fit: cover;
-      margin: 0 auto;
-      height: 12rem;
-      width: 12rem;
-      overflow: hidden;
-    }
-  }
-}
-
-h3 {
-  color: $orange;
-  font-weight: bold;
-  font-size: 25px;
-}
-//Francesco Add new class "is-fuchsia"
-.is-fuchsia {
-  background-color: $fuchsia;
-}
-.is-color-fuchsia {
-  color: $fuchsia;
-}
-
-//Footer francesco
-.footer {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  background-color: $grey;
-}
-.footer_logo img {
-  height: auto;
-  width: 15rem;
-}
-.footer_logo {
-  text-align: center;
-  margin: 1em 1em;
-}
-
-.footer-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  @media screen and (max-width: 653px) {
-    flex-direction: column;
-  }
-}
-
-ul li,
-p {
-  color: $black;
-}
-
-.privacy {
-  text-align: center;
-}
-
-.icons {
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-}
-.icons i {
-  width: 33.33%;
-  height: auto;
-  border-radius: 0.1rem;
-  text-align: center;
-}
-
-.box-a a {
-  color: $black;
-}
-
-.box-a a:hover {
-  text-decoration: underline;
+.container-home img {
+  width: 130vh;
+  height: 65vh;
 }

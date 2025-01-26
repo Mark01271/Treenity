@@ -1,5 +1,4 @@
 @use "sass:color";
-
 @use "bulma/sass";
 
 // Import Normalize.css
@@ -9,7 +8,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
 // Set brand colors
-
 $fuchsia: #e1117e;
 $grey: #cecccc;
 $orange: #f49526;
@@ -18,8 +16,14 @@ $black: #1a1a1a;
 $greyed-out: #363636;
 $white: #ddd;
 
+//creata a new class that add a background color
+.is-fuchsia {
+  background-color: $fuchsia;
+}
 // Additional styles
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -65,4 +69,78 @@ form .label {
 
 form button {
   color: $white;
+}
+
+//titles styles
+h1,
+h2 {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: $greyed-out;
+}
+
+h3 {
+  color: $orange;
+  font-weight: bold;
+  font-size: 25px;
+}
+//Footer styles
+.footer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: $grey;
+}
+.footer_logo img {
+  height: auto;
+  width: 15rem;
+}
+.footer_logo {
+  text-align: center;
+  margin: 1em 1em;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  @media screen and (max-width: 653px) {
+    flex-direction: column;
+  }
+}
+
+ul li,
+p {
+  color: $black;
+}
+
+.privacy {
+  text-align: center;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+.icons i {
+  width: 33.33%;
+  height: auto;
+  border-radius: 0.1rem;
+  text-align: center;
+}
+
+.box-a a {
+  color: $black;
+}
+
+.box-a a:hover {
+  text-decoration: underline;
+}
+
+i {
+  color: $fuchsia;
 }
