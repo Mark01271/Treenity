@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css");
+/* @import "bulma/css/bulma.css"; */
+/* 
+@use "bulma/sass/base";
+@use "bulma/sass/themes";
+
+@use "bulma/sass/elements";
+/* @use "bulma/sass/elements/title"; */
+/* @use "bulma/sass/components/message"; */
+
+:root {
+  --bulma-primary-h: 329deg;
+  --bulma-primary-s: 86%!;
+  --bulma-primary-l: 47%;
+  --bulma-link-h: 32deg;
+  --bulma-link-s: 90%;
+  --bulma-link-l: 55%;
+  --bulma-info-h: 55deg;
+  --bulma-info-s: 88%;
+  --bulma-info-l: 53%;
+  --bulma-success-h: 0deg;
+  --bulma-success-s: 0%;
+  --bulma-success-l: 10%;
+  --bulma-warning-h: 0deg;
+  --bulma-warning-s: 0%;
+  --bulma-warning-l: 21%;
+  --bulma-danger-h: 0deg;
+  --bulma-danger-s: 0%;
+  --bulma-danger-l: 87%;
+  --bulma-scheme-h: 189;
+  --bulma-scheme-s: 4%;
+  --bulma-light-l: 0%;
+  --bulma-body-background-color: #ddd;
+  --bulma-body-color: #1a1a1a;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #ffffff;
+}
+
+.title {
+  text-align: center;
+}
