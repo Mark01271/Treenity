@@ -46,7 +46,7 @@
         <div class="container">
           <div class="card is-centered">
             <div class="card-content">
-              <form action="#" method="POST" class="form">
+              <form class="form" method="POST" id="infoRequestForm">
                 <div class="field">
                   <label class="label" for="nome">Nome Contatto</label>
                   <div class="control">
@@ -67,16 +67,27 @@
                     <input type="tel" id="phone" name="phone" class="input" placeholder="+39" value="+39" required>
                   </div>
                 </div>
-  
+
                 <div class="field">
-                  <label class="label" for="dropdown">Cosa vorresti sapere?</label>
+                  <label class="label" for="nome-comitiva">Nome Comitiva</label>
+                  <div class="control">
+                      <input id="nome-comitiva" name="nome-comitiva" class="input" type="text">
+                  </div>
+              </div>
+
+                <div class="field">
+                  <label class="label" for="dropdown">Tipo di gruppo</label>
                   <div class="control">
                     <div class="select is-fullwidth">
                       <select id="dropdown" name="dropdown" required>
                         <option value="" disabled selected>Seleziona un'opzione</option>
-                        <option value="option1">Opzione 1</option>
-                        <option value="option2">Opzione 2</option>
-                        <option value="option3">Opzione 3</option>
+                        <option value="Scuola">Scuola</option>
+                        <option value="Scout">Scout</option>
+                        <option value="Famiglia">Famiglia</option>
+                        <option value="Gruppi_parrocchiali">Gruppi parrocchiali</option>
+                        <option value="Gruppo_eventi">Gruppo eventi</option>
+                        <option value="Organizzazioni">Organizzazioni</option>
+                        <option value="Altro">Altro</option>
                       </select>
                     </div>
                   </div>
@@ -123,7 +134,7 @@
     </section>
 
     <script type="module" src="/src/scripts/main.ts"></script>
-    <script type="module" src="/src/scripts/info-request.ts"></script>
+    <script type="module" src="/src/scripts/form-info.js"></script>
     <script type="module" src="/src/router.js"></script>
 </body>
 </html>
