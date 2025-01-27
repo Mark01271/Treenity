@@ -14,7 +14,32 @@
     />
   </head>
   <body>
-    <header class="navbar" role="navigation" aria-label="main navigation">
+    <section id="navbar_section">
+      <div class="logo">
+        <a href="#">
+          <img
+            src="./src/images/cascina-caccia-logo.png"
+            alt="logo"
+            class="logo"
+            onclick="navigateTo('/cascina-giovane.it/home')"
+          />
+        </a>
+      </div>
+      <nav class="navigation">
+        <a href="/chi-siamo.html">Chi siamo</a>
+        <a href="/activities.html">Le nostre attività</a>
+        <a href="/richiesta-prenotazione.html">Prenota Ora</a>
+        <a href="/richiesta-informazioni.html">Facci una domanda</a>
+        <a href="https://www.libera.it/">Tutto su libera</a>
+      </nav>
+      <div class="toggleBox">
+        <a onclick="showMenu()" href="#">
+          <i class="menu fa-solid fa-bars"></i>
+          <i class="close fa-solid fa-x"></i>
+        </a>
+      </div>
+    </section>
+    <!-- <header class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a
           class="navbar-item"
@@ -54,7 +79,7 @@
           >
         </div>
       </div>
-    </header>
+    </header> -->
     <section class="hero">
       <div class="container-home">
         <h1>In Ballo tra memoria e comunità</h1>
@@ -182,6 +207,7 @@
       Informativa sulla privacy | Informativa Newsletter | Cookie Policy
     </p>
   </footer>
+  <script src="/src/scripts/main.js"></script>
   <script type="module" src="/src/scripts/main.ts"></script>
   <script type="module" src="/src/scripts/home.ts"></script>
   <script type="module" src="/src/router.js"></script>

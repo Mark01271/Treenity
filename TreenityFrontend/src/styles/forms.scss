@@ -3,8 +3,8 @@
 @use "bulma/sass/utilities/initial-variables";
 
 // Import Normalize.css
-@import "normalize.css/normalize.css";
-
+// @import "normalize.css/normalize.css";
+@import "main.scss";
 // Import Montserrat Google Font
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
@@ -47,6 +47,10 @@ $hero-padding: 70px 20px;
 html {
   font-family: "Montserrat", sans-serif;
   background: $body-background-color;
+}
+
+.centered {
+  margin-top: 5rem;
 }
 
 .centered-heading {

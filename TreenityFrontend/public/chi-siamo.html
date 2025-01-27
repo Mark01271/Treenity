@@ -17,49 +17,30 @@
     <!-- <script type="module" src="../src/scripts/main.ts"></script> -->
   </head>
   <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a
-          class="navbar-item"
-          href="/cascina-giovane.it/home"
-          onclick="navigateTo('/cascina-giovane.it/home')"
-        >
+    <section id="navbar_section">
+      <div class="logo">
+        <a href="/index.html">
           <img
-            src="../src/images/cascina-caccia-logo.png"
-            alt=""
-            class="navbar-brand logo"
-        /></a>
+            src="./src/images/cascina-caccia-logo.png"
+            alt="logo"
+            class="logo"
+          />
+        </a>
       </div>
-
-      <a
-        class="navbar-burger"
-        role="button"
-        aria-label="menu"
-        aria-expanded="false"
-      >
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-
-      <div id="navbarMenu" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="../index.html">Home</a>
-          <a class="navbar-item" href="/chi-siamo.html">Chi siamo</a>
-          <a class="navbar-item" href="/attivita">Le nostre attività</a>
-          <a class="navbar-item" href="/richiesta-prenotazione.html"
-            >Prenota ora</a
-          >
-          <a class="navbar-item" href="/richiesta-informazioni.html"
-            >Facci una domanda</a
-          >
-          <a class="navbar-item" href="https://www.libera.it/" target="_blank"
-            >Tutto su Libera</a
-          >
-        </div>
+      <nav class="navigation">
+        <a href="#">Chi siamo</a>
+        <a href="/activities.html">Le nostre attività</a>
+        <a href="/richiesta-prenotazione.html">Prenota Ora</a>
+        <a href="/richiesta-informazioni.html">Facci una domanda</a>
+        <a href="https://www.libera.it/">Tutto su libera</a>
+      </nav>
+      <div class="toggleBox">
+        <a onclick="showMenu()" href="#">
+          <i class="menu fa-solid fa-bars"></i>
+          <i class="close fa-solid fa-x"></i>
+        </a>
       </div>
-    </nav>
+    </section>
     <section class="chi-siamo section is-small">
       <h1
         class="title has-text-centered has-text-black has-text-weight-bold is-size-3"
@@ -204,6 +185,7 @@
         Informativa sulla privacy | Informativa Newsletter | Cookie Policy
       </p>
     </footer>
+    <script src="/src/scripts/main.js"></script>
     <script type="module" src="/src/scripts/main.ts"></script>
     <script type="module" src="/src/scripts/chi-siamo.ts"></script>
     <script type="module" src="/src/router.js"></script>

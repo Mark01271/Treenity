@@ -1,45 +1,92 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - Cascina Giovane</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand"><a class="navbar-item" href="/cascina-giovane.it/home" onclick="navigateTo('/cascina-giovane,it/home')"><img src="src/images/cascina-caccia-logo.png" alt="" class="navbar-brand logo"></a></div>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="navbar_section">
+      <div class="logo">
+        <a href="index.html">
+          <img
+            src="./src/images/cascina-caccia-logo.png"
+            alt="logo"
+            class="logo"
+          />
+        </a>
+      </div>
+      <nav class="navigation">
+        <a href="/chi-siamo.html">Chi siamo</a>
+        <a href="/activities.html">Le nostre attività</a>
+        <a href="#">Prenota Ora</a>
+        <a href="/richiesta-informazioni.html">Facci una domanda</a>
+        <a href="https://www.libera.it/">Tutto su libera</a>
+      </nav>
+      <div class="toggleBox">
+        <a onclick="showMenu()" href="#">
+          <i class="menu fa-solid fa-bars"></i>
+          <i class="close fa-solid fa-x"></i>
+        </a>
+      </div>
+    </section>
+    <!-- <hea
+    <!-- <header class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a
+          class="navbar-item"
+          href="/cascina-giovane.it/home"
+          onclick="navigateTo('/cascina-giovane,it/home')"
+          ><img
+            src="src/images/cascina-caccia-logo.png"
+            alt=""
+            class="navbar-brand logo"
+        /></a>
+      </div>
 
-    <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
+      <a
+        class="navbar-burger"
+        role="button"
+        aria-label="menu"
+        aria-expanded="false"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
 
-    <div id="navbarMenu" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="/chi-siamo">Chi siamo</a>
-        <a class="navbar-item" href="/attivita">Le nostre attività</a>
-        <a class="navbar-item" href="/richiesta-prenotazione.html">Prenota ora</a>
-        <a class="navbar-item" href="/richiesta-informazioni.html">Facci una domanda</a>
-        <a class="navbar-item" href="https://www.libera.it/" target="_blank">Tutto su Libera</a>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/chi-siamo">Chi siamo</a>
+          <a class="navbar-item" href="/attivita">Le nostre attività</a>
+          <a class="navbar-item" href="/richiesta-prenotazione.html"
+            >Prenota ora</a
+          >
+          <a class="navbar-item" href="/richiesta-informazioni.html"
+            >Facci una domanda</a
+          >
+          <a class="navbar-item" href="https://www.libera.it/" target="_blank"
+            >Tutto su Libera</a
+          >
+        </div>
+      </div>
+    </header> -->
+
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <h1 class="title is-1 centered">Richiesta informazioni</h1>
+          <h2 class="subtitle centered">
+            Compila il form per farci qualsiasi domanda ti venga in mente!
+          </h2>
+        </div>
       </div>
     </div>
-  </header>
-
-          <div class="container">
-              <div class="columns is-centered">
-                  <div class="column is-half">
-                    <h1 class="title is-1 centered">
-                      Richiesta informazioni
-                    </h1>
-                    <h2 class="subtitle centered">
-                      Compila il form per farci qualsiasi domanda ti venga in mente!
-                    </h2>
-                  </div>
-              </div>
-          </div>
 
     <section class="hero is-fullheight-with-navbar">
       <div class="hero-body">
@@ -50,37 +97,55 @@
                 <div class="field">
                   <label class="label" for="nome">Nome Contatto</label>
                   <div class="control">
-                    <input id="nome" name="nome" class="input" type="text"" required>
+                    <input id="nome" name="nome" class="input" type="text""
+                    required>
                   </div>
                 </div>
-  
+
                 <div class="field">
                   <label class="label" for="email">Email</label>
                   <div class="control">
-                    <input id="email" name="email" class="input" type="email" required>
+                    <input
+                      id="email"
+                      name="email"
+                      class="input"
+                      type="email"
+                      required
+                    />
                   </div>
                 </div>
-  
+
                 <div class="field">
                   <label class="label" for="phone">Telefono</label>
                   <div class="control">
-                    <input type="tel" id="phone" name="phone" class="input" placeholder="+39" value="+39" required>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      class="input"
+                      placeholder="+39"
+                      value="+39"
+                      required
+                    />
                   </div>
                 </div>
 
                 <div class="field">
                   <label class="label" for="nome">Nome Comitiva</label>
                   <div class="control">
-                    <input id="nome-comitiva" name="nome-comitiva" class="input" type="text"" required>
+                    <input id="nome-comitiva" name="nome-comitiva" class="input"
+                    type="text"" required>
                   </div>
                 </div>
-  
+
                 <div class="field">
                   <label class="label" for="dropdown">Tipo Comitiva</label>
                   <div class="control">
                     <div class="select is-fullwidth">
                       <select id="dropdown" name="dropdown" required>
-                        <option value="" disabled selected>Seleziona un'opzione</option>
+                        <option value="" disabled selected>
+                          Seleziona un'opzione
+                        </option>
                         <option value="option1">Opzione 1</option>
                         <option value="option2">Opzione 2</option>
                         <option value="option3">Opzione 3</option>
@@ -92,7 +157,13 @@
                 <div class="field">
                   <label class="label" for="data">Disponibilità Data</label>
                   <div class="control">
-                      <input id="data" name="data" class="input" type="date" required>
+                    <input
+                      id="data"
+                      name="data"
+                      class="input"
+                      type="date"
+                      required
+                    />
                   </div>
                 </div>
 
@@ -100,8 +171,15 @@
                   <label class="label" for="orario">Disponibilità Oraria</label>
                   <div class="control has-icons-right">
                     <div class="select is-fullwidth">
-                      <select id="orario" name="orario" class="input tickless" required>
-                        <option value="" disabled selected>Seleziona un'opzione</option>
+                      <select
+                        id="orario"
+                        name="orario"
+                        class="input tickless"
+                        required
+                      >
+                        <option value="" disabled selected>
+                          Seleziona un'opzione
+                        </option>
                         <option value="Mattina">Mattina</option>
                         <option value="Pomeriggio">Pomeriggio</option>
                         <option value="Giornata">Giornata</option>
@@ -114,46 +192,67 @@
                     </span> -->
                   </div>
                 </div>
-                
-  
+
                 <fieldset>
                   <div class="field">
-                    <label class="label" for="informazioni">Intento dell'intervento</label>
-                    <legend>Dicci cosa cerchi dall’esperienza presso <b>Cascina Caccia!</b></legend>
+                    <label class="label" for="informazioni"
+                      >Intento dell'intervento</label
+                    >
+                    <legend>
+                      Dicci cosa cerchi dall’esperienza presso
+                      <b>Cascina Caccia!</b>
+                    </legend>
                     <div class="control">
-                      <textarea id="informazioni" name="informazioni" class="textarea" placeholder="Scrivi qui..." required></textarea>
+                      <textarea
+                        id="informazioni"
+                        name="informazioni"
+                        class="textarea"
+                        placeholder="Scrivi qui..."
+                        required
+                      ></textarea>
                     </div>
                   </div>
                 </fieldset>
 
                 <fieldset>
                   <div class="field">
-                    <label class="label" for="informazioni">Richieste aggiuntive</label>
-                    <legend>Rendici al corrente di eventuali necessità, come accessibilità o allergie!</legend>
+                    <label class="label" for="informazioni"
+                      >Richieste aggiuntive</label
+                    >
+                    <legend>
+                      Rendici al corrente di eventuali necessità, come
+                      accessibilità o allergie!
+                    </legend>
                     <div class="control">
-                      <textarea id="informazioni" name="informazioni" class="textarea" placeholder="Scrivi qui..." required></textarea>
+                      <textarea
+                        id="informazioni"
+                        name="informazioni"
+                        class="textarea"
+                        placeholder="Scrivi qui..."
+                        required
+                      ></textarea>
                     </div>
                   </div>
                 </fieldset>
-  
+
                 <div class="field">
                   <div class="control">
                     <label class="checkbox">
-                      <input type="checkbox" required>
+                      <input type="checkbox" required />
                       Accetto i termini e le condizioni
                     </label>
                   </div>
                 </div>
-  
+
                 <div class="field">
                   <div class="control">
                     <label class="checkbox">
-                      <input type="checkbox">
+                      <input type="checkbox" />
                       Voglio ricevere aggiornamenti via email
                     </label>
                   </div>
                 </div>
-  
+
                 <div class="field">
                   <div class="control">
                     <button class="button" type="submit">Invia</button>
@@ -165,9 +264,9 @@
         </div>
       </div>
     </section>
-
+    <script async src="/src/scripts/main.js"></script>
     <script type="module" src="/src/scripts/main.ts"></script>
     <script type="module" src="/src/scripts/forms.ts"></script>
     <script type="module" src="/src/router.js"></script>
-</body>
+  </body>
 </html>

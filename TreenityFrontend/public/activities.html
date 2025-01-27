@@ -10,6 +10,30 @@
     />
   </head>
   <body>
+    <section id="navbar_section">
+      <div class="logo">
+        <a href="/index.html">
+          <img
+            src="./src/images/cascina-caccia-logo.png"
+            alt="logo"
+            class="logo"
+          />
+        </a>
+      </div>
+      <nav class="navigation">
+        <a href="/chi-siamo.html">Chi siamo</a>
+        <a href="#">Le nostre attività</a>
+        <a href="/richiesta-prenotazione.html">Prenota Ora</a>
+        <a href="/richiesta-informazioni.html">Facci una domanda</a>
+        <a href="https://www.libera.it/">Tutto su libera</a>
+      </nav>
+      <div class="toggleBox">
+        <a onclick="showMenu()" href="#">
+          <i class="menu fa-solid fa-bars"></i>
+          <i class="close fa-solid fa-x"></i>
+        </a>
+      </div>
+    </section>
     <h1>Le nostre Attività</h1>
 
     <div class="container-activities">
@@ -154,6 +178,7 @@
       Informativa sulla privacy | Informativa Newsletter | Cookie Policy
     </p>
   </footer>
+  <script src="/src/scripts/main.js"></script>
   <script type="module" src="/src/scripts/main.ts"></script>
   <script type="module" src="/src/scripts/activities.ts"></script>
   <script type="module" src="/src/router.js"></script>
