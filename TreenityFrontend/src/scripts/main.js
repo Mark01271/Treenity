@@ -9,5 +9,5 @@ function showMenu() {
 //javascript for carousel
 bulmaCarousel.attach("#carousel-demo", {
   slidesToScroll: 1,
-  slidesToShow: 1,
+  slidesToShow: 2,
 });

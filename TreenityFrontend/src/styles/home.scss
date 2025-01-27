@@ -4,13 +4,13 @@
 @use "bulma/sass/utilities";
 
 @import "main.scss";
-body {
-  margin: 0;
-  padding: 0;
-}
+
 //Stili per la home
+
+.container-home:nth-child(1) {
+  margin-top: 5em;
+}
 .container-home {
-  margin-top: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
