@@ -8,49 +8,41 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
+    />
   </head>
   <body>
-    <header class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a
-          class="navbar-item"
-          href="/cascina-giovane.it/home"
-          onclick="navigateTo('/cascina-giovane,it/home')"
-          ><img
-            src="src/images/cascina-caccia-logo.png"
-            alt=""
-            class="navbar-brand logo"
-        /></a>
+    <section id="navbar_section">
+      <div class="logo">
+        <a href="#">
+          <img
+            src="./src/images/cascina-caccia-logo.png"
+            alt="logo"
+            class="logo"
+            onclick="navigateTo('/cascina-giovane.it/home')"
+          />
+        </a>
       </div>
-
-      <a
-        class="navbar-burger"
-        role="button"
-        aria-label="menu"
-        aria-expanded="false"
-      >
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-
-      <div id="navbarMenu" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="/chi-siamo">Chi siamo</a>
-          <a class="navbar-item" href="/attivita">Le nostre attività</a>
-          <a class="navbar-item" href="/richiesta-prenotazione.html"
-            >Prenota ora</a
-          >
-          <a class="navbar-item" href="/richiesta-informazioni.html"
-            >Facci una domanda</a
-          >
-          <a class="navbar-item" href="https://www.libera.it/" target="_blank"
-            >Tutto su Libera</a
-          >
-        </div>
+      <nav class="navigation">
+        <a href="/chi-siamo.html">Chi siamo</a>
+        <a href="/activities.html">Le nostre attività</a>
+        <a href="/richiesta-prenotazione.html">Prenota Ora</a>
+        <a href="/richiesta-informazioni.html">Facci una domanda</a>
+        <a href="https://www.libera.it/">Tutto su libera</a>
+      </nav>
+      <div class="toggleBox">
+        <a onclick="showMenu()" href="#">
+          <i class="menu fa-solid fa-bars"></i>
+          <i class="close fa-solid fa-x"></i>
+        </a>
       </div>
-    </header>
+    </section>
 
     <div class="container">
       <div class="columns is-centered">
@@ -239,7 +231,77 @@
         </div>
       </div>
     </section>
+    <footer class="footer">
+      <div class="footer_logo">
+        <img src="../src/images/cascina-caccia-logo.png" alt="" />
+      </div>
+      <div class="footer-container">
+        <div class="box-a">
+          <h3>Dicono di noi</h3>
+          <ul>
+            <li><a href="/activities.html">Lab</a></li>
+            <li><a>Gruppi</a></li>
+            <li><a>Eventi</a></li>
+            <li><a>Recensioni</a></li>
+            <li><a>News</a></li>
+          </ul>
+        </div>
+        <div class="box-a">
+          <h3>Cooperativa</h3>
+          <ul>
+            <li><a>Su di noi</a></li>
+            <li><a>Contatti</a></li>
+            <li><a>Lavora con noi</a></li>
+            <li><a>Storia</a></li>
+            <li><a>Blog</a></li>
+          </ul>
+        </div>
+        <div class="box-a">
+          <h3>Supporto</h3>
+          <ul>
+            <li><a>Normativa</a></li>
+            <li><a>Help center</a></li>
+            <li><a>Server status</a></li>
+            <li><a>Area Admin</a></li>
+          </ul>
+        </div>
 
+        <div class="icons">
+          <a
+            href="https://www.facebook.com/cascinacaccia"
+            target="_blank"
+            aria-label="Facebook"
+          >
+            <span class="icon is-medium is-color-fuchsia">
+              <i class="fab fa-facebook-f"></i>
+            </span>
+          </a>
+          <a
+            href="https://www.instagram.com/cascina_caccia/"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <span class="icon is-medium is-color-fuchsia">
+              <i class="fab fa-instagram"></i>
+            </span>
+          </a>
+          <a
+            href="https://www.youtube.com/@acmosnet99"
+            target="_blank"
+            aria-label="Youtube"
+          >
+            <span class="icon is-medium is-color-fuchsia">
+              <i class="fab fa-youtube"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      <hr />
+      <p class="privacy">
+        Informativa sulla privacy | Informativa Newsletter | Cookie Policy
+      </p>
+    </footer>
+    <script src="/src/scripts/main.js"></script>
     <script type="module" src="/src/scripts/main.ts"></script>
     <script type="module" src="/src/scripts/form-appointment.js"></script>
     <script type="module" src="/src/router.js"></script>
