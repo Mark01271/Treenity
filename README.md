@@ -292,4 +292,4 @@ spring.datasource.password=
 spring.jpa.hibernate.ddl-auto=none
 ```
 
-3. **Avvio del server**: eseguire `localhost:8080` da un browser per poter avviare l'applicazione.
+3. **Avvio del server**: eseguire `localhost:3000` da un browser per poter avviare l'applicazione.
