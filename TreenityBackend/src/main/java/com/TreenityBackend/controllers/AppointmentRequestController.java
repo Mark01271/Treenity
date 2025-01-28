@@ -22,28 +22,43 @@ import com.TreenityBackend.services.StatusEntityService;
 
 import lombok.RequiredArgsConstructor;
 
+/**
+ * Controller per la gestione delle richieste di appuntamento.
+ * Esporta operazioni per creare, recuperare e gestire le richieste di appuntamento.
+ */
 @RestController
 @RequestMapping("/appointment-requests")
-@RequiredArgsConstructor
-@Validated
+@RequiredArgsConstructor 
+@Validated 
 public class AppointmentRequestController {
 
+    
     private final AppointmentRequestService appointmentRequestService;
     private final RequestLogService requestLogService;
     private final EmailService emailService;
     private final StatusEntityService statusEntityService;
 
+    /**
+     * Crea una nuova richiesta di appuntamento.
+     * Inizializza una richiesta, crea un log associato, invia notifiche via email
+     * e salva la richiesta nel database.
+     * 
+     * @param request La richiesta di appuntamento da creare
+     * @return La richiesta di appuntamento salvata
+     * @throws ValidationException Se la richiesta è nulla
+     */
     @PostMapping
     public AppointmentRequest createAppointmentRequest(@RequestBody AppointmentRequest request) {
+        // Verifica che la richiesta non sia nulla
         if (request == null) {
             throw new ValidationException("La richiesta non può essere nulla.");
         }
 
-        // Recupera lo stato iniziale per il RequestLog
+        // Recupera lo stato iniziale per il RequestLog (stato "received")
         StatusEntity status = statusEntityService.getStatusByName(StatusEntity.StatusName.received)
                 .orElseThrow(() -> new RuntimeException("Status non trovato"));
 
-        // Crea un nuovo RequestLog preliminare
+        // Crea un nuovo RequestLog con stato "received"
         RequestLog requestLog = RequestLog.builder()
                 .comment("Richiesta creata dal form")
                 .status(status)
@@ -52,7 +67,7 @@ public class AppointmentRequestController {
         // Salva il RequestLog preliminare
         RequestLog savedRequestLog = requestLogService.saveLog(requestLog);
 
-        // Assegna il RequestLog preliminare alla richiesta
+        // Assegna il RequestLog preliminare alla richiesta di appuntamento
         request.setRequestLog(savedRequestLog);
 
         // Salva la richiesta di appuntamento
@@ -62,33 +77,63 @@ public class AppointmentRequestController {
         savedRequestLog.setRelatedRequestId(savedRequest.getId());
         requestLogService.saveLog(savedRequestLog);
 
-        // Invia la conferma all'utente
+        // Invia una email di conferma all'utente
         emailService.sendUserConfirmationEmail(request.getEmail(), request.getContactPerson());
 
-        // Invia notifica all'amministratore con l'ID della richiesta
-        String requestDetails = "Nuova richiesta di appuntamento:\n\n" +
+        // Prepara e invia la notifica all'amministratore
+        String requestDetails = "Nuova richiesta di appuntamento ricevuta:\n\n" +
                 "ID richiesta: " + savedRequest.getId() + "\n" +
                 "Gruppo: " + savedRequest.getGroupName() + "\n" +
+                "Tipo di gruppo: " + savedRequest.getGroupType() + "\n" +
                 "Contatto: " + savedRequest.getContactPerson() + "\n" +
                 "Email: " + savedRequest.getEmail() + "\n" +
-                "Telefono: " + savedRequest.getPhone();
+                "Telefono: " + savedRequest.getPhone() + "\n" +
+                "Data disponibilità: " + savedRequest.getAvailabilityDate() + "\n" +
+                "Orario disponibilità: " + savedRequest.getAvailabilityTime() + "\n" +
+                "Intento dell'evento: " + savedRequest.getEventIntent() + "\n" +
+                "Messaggio: " + savedRequest.getMessage() + "\n" +
+                "Richieste aggiuntive: " + (savedRequest.getAdditionalRequests() != null ? savedRequest.getAdditionalRequests() : "Nessuna") + "\n" +
+                "Data di creazione: " + savedRequest.getCreatedAt() + "\n";
         emailService.sendAdminNotificationEmail("provatreenity@gmail.com", requestDetails);
 
+        // Restituisce la richiesta di appuntamento salvata
         return savedRequest;
     }
 
+    /**
+     * Recupera tutte le richieste di appuntamento.
+     * 
+     * @return La lista di tutte le richieste di appuntamento
+     * @throws AppointmentRequestNotFoundException Se non sono state trovate richieste di appuntamento
+     */
     @GetMapping("/all")
     public List<AppointmentRequest> getAllAppointmentRequests() {
+        // Recupera tutte le richieste di appuntamento dal servizio
         List<AppointmentRequest> requests = appointmentRequestService.getAllAppointmentRequests();
+
+        // Se non ci sono richieste, lancia un'eccezione
         if (requests.isEmpty()) {
             throw new AppointmentRequestNotFoundException("Nessuna richiesta di appuntamento trovata.");
         }
+
+        // Restituisce la lista delle richieste
         return requests;
     }
 
+    /**
+     * Recupera una richiesta di appuntamento tramite ID.
+     * 
+     * @param id L'ID della richiesta di appuntamento da recuperare
+     * @return La richiesta di appuntamento trovata
+     * @throws AppointmentRequestNotFoundException Se la richiesta con l'ID specificato non viene trovata
+     */
     @GetMapping("/{id}")
     public AppointmentRequest getAppointmentRequestById(@PathVariable Integer id) {
+        // Recupera la richiesta tramite il servizio usando l'ID
         return appointmentRequestService.getAppointmentRequestById(id)
                 .orElseThrow(() -> new AppointmentRequestNotFoundException("AppointmentRequest con ID " + id + " non trovato"));
     }
 }
+
+
+
