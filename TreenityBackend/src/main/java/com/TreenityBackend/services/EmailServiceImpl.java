@@ -9,15 +9,26 @@ import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * Implementazione del servizio per l'invio di email. 
+ * Il servizio include metodi per inviare email di conferma agli utenti e notifiche agli amministratori.
+ */
 @Service
 @RequiredArgsConstructor
 public class EmailServiceImpl implements EmailService {
 
     private final JavaMailSender javaMailSender;
 
+    /**
+     * Invia una email di conferma di ricezione della richiesta all'utente.
+     * Il contenuto dell'email è in formato HTML.
+     *
+     * @param userEmail L'email dell'utente a cui inviare la conferma
+     * @param contactPerson Il nome della persona di contatto per personalizzare il messaggio
+     */
     @Override
     public void sendUserConfirmationEmail(String userEmail, String contactPerson) {
-        // Crea il messaggio HTML
+        // Crea il contenuto dell'email in formato HTML
         String htmlContent = """
         	    <div style="font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 600px; margin: auto; border: 1px solid #ddd; border-radius: 10px; position: relative;">
         	    
@@ -67,32 +78,41 @@ public class EmailServiceImpl implements EmailService {
                   </tr>
                 </table>
             </div>
-        """;
+        """; // Fine del contenuto HTML
 
-        // Invio della mail
+        // Invio dell'email tramite il JavaMailSender
         try {
+            // Creazione di un oggetto MimeMessage per l'invio dell'email HTML
             MimeMessage mimeMessage = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true, "UTF-8");
 
-            helper.setTo(userEmail);
-            helper.setSubject("Conferma di ricezione richiesta");
-            helper.setText(htmlContent, true); // Attiva il formato HTML
+            helper.setTo(userEmail);  // Destinatario
+            helper.setSubject("Conferma di ricezione richiesta"); // Oggetto
+            helper.setText(htmlContent, true); // Imposta il corpo del messaggio come HTML
 
+            // Invio dell'email
             javaMailSender.send(mimeMessage);
         } catch (MessagingException e) {
-            throw new RuntimeException("Errore nell'invio dell'email di conferma", e);
+            throw new RuntimeException("Errore nell'invio dell'email di conferma", e);  // Gestione dell'errore
         }
     }
 
+    /**
+     * Invia una notifica email all'amministratore riguardo una nuova richiesta ricevuta.
+     * La notifica include i dettagli della richiesta.
+     *
+     * @param adminEmail L'email dell'amministratore a cui inviare la notifica
+     * @param requestDetails I dettagli della richiesta ricevuta
+     */
     @Override
     public void sendAdminNotificationEmail(String adminEmail, String requestDetails) {
-        // Crea il messaggio per l'amministratore
+        // Crea un messaggio semplice per notificare l'amministratore
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo(adminEmail);
-        message.setSubject("Nuova richiesta ricevuta");
-        message.setText("Hai ricevuto una nuova richiesta:\n\n" + requestDetails);
+        message.setTo(adminEmail); // Destinatario
+        message.setSubject("Nuova richiesta ricevuta"); // Oggetto
+        message.setText("Hai ricevuto una nuova richiesta:\n\n" + requestDetails);  // Corpo del messaggio
 
-        // Invio dell'email
+        // Invio dell'email all'amministratore
         javaMailSender.send(message);
     }
 }
