@@ -87,3 +87,18 @@ VALUES
   ('IN_PROGRESS'),
   ('COMPLETED'),
   ('ARCHIVED');
+
+
+INSERT INTO Admins (
+  username, 
+  password_hash, 
+  email
+) 
+VALUES 
+  (
+    'admin_1', 
+    SHA2('Password123!', 256),
+    'admin.1@gmail.com'
+  );
+
+  
