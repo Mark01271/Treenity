@@ -1,0 +1,53 @@
+// @use "sass:color";
+// @use "bulma";
+// @use "bulma/sass/utilities";
+
+// Import Normalize.css
+// @import "normalize.css/normalize.css";
+@import "main.scss";
+
+//style for activities page
+h1 {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: $greyed-out;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: bold;
+  color: $greyed-out;
+}
+
+button {
+  margin-top: 1rem;
+}
+
+p {
+  color: $black;
+}
+
+.container-activities {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container-grid {
+  display: grid;
+  /* Definisco due colonne di larghezza uguale */
+  grid-template-columns: 1fr;
+  /* Aggiungo uno spazio tra gli elementi */
+  margin: 1em;
+  gap: 1em;
+  @media screen and (min-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.image img {
+  width: 100%;
+  /* Mantiengo le proporzioni dell'immagine */
+  height: auto;
+}

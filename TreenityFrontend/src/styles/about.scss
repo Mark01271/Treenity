@@ -1,0 +1,28 @@
+@use "sass:color";
+
+@use "bulma/sass";
+@import url("https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css");
+@import "bulma/css/bulma.css";
+// // Import Normalize.css
+// @import 'normalize.css/normalize.css';
+
+// Import Montserrat Google Font
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+@import "main.scss";
+// Set brand colors
+// Navbar styles
+.card,
+.input {
+  background: $white;
+  box-shadow: 4px 4px 10px $black;
+}
+
+form .label {
+  color: $black;
+}
+
+form button {
+  background: $fuchsia;
+  color: $white;
+}

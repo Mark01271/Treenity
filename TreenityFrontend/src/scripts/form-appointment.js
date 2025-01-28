@@ -1,1 +1,1 @@
-import './request-appointment.ts';
+import "./request-appointment.ts";
