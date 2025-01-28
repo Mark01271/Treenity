@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi siamo</title>
+    <link rel="stylesheet" href="../src/styles/about.css" />
+    <script type="module" src="/src/router.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- <script type="module" src="../src/scripts/main.ts"></script> -->
+  </head>
+  <body>
+    <section id="navbar_section">
+      <div class="logo">
+        <a href="/index.html">
+          <img
+            src="./src/images/cascina-caccia-logo.png"
+            alt="logo"
+            class="logo"
+          />
+        </a>
+      </div>
+      <nav class="navigation">
+        <a href="#">Chi siamo</a>
+        <a href="/activities.html">Le nostre attività</a>
+        <a href="/richiesta-prenotazione.html">Prenota Ora</a>
+        <a href="/richiesta-informazioni.html">Facci una domanda</a>
+        <a href="https://www.libera.it/">Tutto su libera</a>
+      </nav>
+      <div class="toggleBox">
+        <a onclick="showMenu()" href="#">
+          <i class="menu fa-solid fa-bars"></i>
+          <i class="close fa-solid fa-x"></i>
+        </a>
+      </div>
+    </section>
+    <section class="chi-siamo section is-small">
+      <h1
+        class="title has-text-centered has-text-black has-text-weight-bold is-size-3"
+      >
+        Chi siamo
+      </h1>
+      <section class="section is-small">
+        <div class="columns is-mobile content is-multiline is-centered">
+          <figure class="column is-half">
+            <img
+              src="../src/images/cascinaCaccia_carla&bruno.png"
+              alt="Carla e Bruno"
+              class="is-two-fifths"
+            />
+          </figure>
+          <div class="column is-half">
+            <strong class="has-text-black has-text-weight-bold"
+              >Cascina Caccia</strong
+            >
+            è un bene aperto al pubblico ed è animata dalla comunità di
+            residenti e volontari che collaborando per il benessere sociale.
+            Cascina Caccia rappresenta un importante punto di riferimento per la
+            comunità locale. Si tratta di unospazio è vivo e dinamico grazie
+            alla partecipazione attiva di residenti e volontari che, con impegno
+            e passione, contribuiscono a creare un ambiente di condivisione,
+            collaborazione e crescita collettiva.
+          </div>
+          <div class="column is-half">
+            <strong class="has-text-black has-text-weight-bold"
+              >Libera. Associazioni, nomi e numeri contro le mafie</strong
+            > è nata il 25 marzo del 1995, con l’intento fare la propria parte
+            per sollecitare l’impegno della
+            <strong class="has-text-black has-text-weight-bold"
+              >società civile contro tutte le mafie.</strong
+            >
+            Fino ad oggi, hanno aderito a Libera più di <strong
+              class="has-text-black has-text-weight-bold"
+              >1600 gruppi</strong
+            > tra nazionali e locali, oltre a singoli sostenitori.
+          </div>
+          <figure class="column is-half">
+            <img
+              src="../src/images/libera-contro-mafie.png"
+              alt="Libera, associazioni, nomi e numeri contro le mafie"
+              class="is-two-fifths"
+            />
+          </figure>
+          <figure class="column is-half">
+            <img
+              src="../src/images/acmos.png"
+              alt="Acmos"
+              class="is-two-fifths"
+            />
+          </figure>
+          <div class="column is-half">
+            <strong class="has-text-black has-text-weight-bold"
+              >Acmos  è un’associazione apartitica e aconfessionale</strong
+            >
+            che promuove e sostiene l’inclusione e la
+            <strong class="has-text-black has-text-weight-bold"
+              >partecipazione attiva, creativa e responsabile </strong
+            >dei giovani alla vita democratica.
+          </div>
+          <button class="button is-fuchsia">
+            <a
+              href="https://www.libera.it/"
+              target="_blank"
+              class="has-text-white"
+              >Scopri di più su Libera</a
+            >
+          </button>
+        </div>
+      </section>
+    </section>
+    <footer class="footer">
+      <div class="footer_logo">
+        <img src="../src/images/cascina-caccia-logo.png" alt="" />
+      </div>
+      <div class="footer-container">
+        <div class="box-a">
+          <h3>Dicono di noi</h3>
+          <ul>
+            <li><a href="/activities.html">Lab</a></li>
+            <li><a>Gruppi</a></li>
+            <li><a>Eventi</a></li>
+            <li><a>Recensioni</a></li>
+            <li><a>News</a></li>
+          </ul>
+        </div>
+        <div class="box-a">
+          <h3>Cooperativa</h3>
+          <ul>
+            <li><a>Su di noi</a></li>
+            <li><a>Contatti</a></li>
+            <li><a>Lavora con noi</a></li>
+            <li><a>Storia</a></li>
+            <li><a>Blog</a></li>
+          </ul>
+        </div>
+        <div class="box-a">
+          <h3>Supporto</h3>
+          <ul>
+            <li><a>Normativa</a></li>
+            <li><a>Help center</a></li>
+            <li><a>Server status</a></li>
+            <li><a>Area Admin</a></li>
+          </ul>
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://www.facebook.com/cascinacaccia"
+            target="_blank"
+            aria-label="Facebook"
+          >
+            <span class="icon is-medium is-color-fuchsia">
+              <i class="fab fa-facebook-f"></i>
+            </span>
+          </a>
+          <a
+            href="https://www.instagram.com/cascina_caccia/"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <span class="icon is-medium is-color-fuchsia">
+              <i class="fab fa-instagram"></i>
+            </span>
+          </a>
+          <a
+            href="https://www.youtube.com/@acmosnet99"
+            target="_blank"
+            aria-label="Youtube"
+          >
+            <span class="icon is-medium is-color-fuchsia">
+              <i class="fab fa-youtube"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      <hr />
+      <p class="privacy">
+        Informativa sulla privacy | Informativa Newsletter | Cookie Policy
+      </p>
+    </footer>
+    <script src="/src/scripts/main.js"></script>
+    <script type="module" src="/src/scripts/main.ts"></script>
+    <script type="module" src="/src/scripts/chi-siamo.ts"></script>
+    <script type="module" src="/src/router.js"></script>
+  </body>
+</html>

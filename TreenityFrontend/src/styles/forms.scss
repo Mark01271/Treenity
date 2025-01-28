@@ -3,18 +3,11 @@
 @use "bulma/sass/utilities/initial-variables";
 
 // Import Normalize.css
-@import "normalize.css/normalize.css";
-
+// @import "normalize.css/normalize.css";
 // Import Montserrat Google Font
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
-// Set brand colors
-$fuchsia: #e1117e;
-$orange: #f49526;
-$yellow: #f0df1c;
-$black: #1a1a1a;
-$greyed-out: #363636;
-$white: #ddd;
+@import "main.scss";
 
 // Customize Bulma variables for a white background and black text
 $primary: $black; // Define primary color as black
@@ -47,6 +40,10 @@ $hero-padding: 70px 20px;
 html {
   font-family: "Montserrat", sans-serif;
   background: $body-background-color;
+}
+
+.centered {
+  margin-top: 5rem;
 }
 
 .centered-heading {

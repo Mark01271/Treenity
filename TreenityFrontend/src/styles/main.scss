@@ -1,5 +1,4 @@
 @use "sass:color";
-
 @use "bulma/sass";
 
 // Import Normalize.css
@@ -9,14 +8,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
 // Set brand colors
+$fuchsia: #e1117e;
+$grey: #cecccc;
 $orange: #f49526;
 $yellow: #f0df1c;
 $black: #1a1a1a;
 $greyed-out: #363636;
 $white: #ddd;
 
+//creata a new class that add a background color
+.is-fuchsia {
+  background-color: $fuchsia;
+}
 // Additional styles
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -26,29 +33,113 @@ html {
 }
 
 // Navbar styles
-.navbar {
-  height: 64px;
-  background: rgb(50, 50, 50);
-  background: linear-gradient(180deg, #323232cd 0%, #dddddd 100%);
-  overflow: hidden;
+
+#navbar_section {
+  width: 100%;
+  position: fixed;
+  background-color: $grey;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.navbar-brand {
-  display: flex;
-  align-items: center;
+  height: 5rem;
+  z-index: 999;
 }
 
 .logo {
-  max-height: 64px; // Maintain the navbar's height
-  object-fit: contain; // Preserve the logo's aspect ratio
+  height: 80%;
 }
 
-.navbar-burger span {
-  background: $greyed-out;
+.logo a img {
+  margin-left: 1.5rem;
 }
+
+nav.navigation {
+  display: none;
+}
+
+nav.navigation.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 5rem;
+  width: 100%;
+  height: 50%;
+  background: $grey;
+}
+
+nav.navigation.active a {
+  padding: 0.5rem;
+  font-weight: bold;
+  color: $fuchsia;
+  border-radius: 10%;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+nav.navigation.active a:hover {
+  text-decoration: underline;
+}
+
+.toggleBox a i {
+  font-size: 2rem;
+  color: $black;
+  margin-right: 1.5rem;
+  filter: invert(0);
+}
+
+i.menu.hide,
+i.close {
+  display: none;
+}
+
+i.close.show {
+  display: block;
+}
+
+@media only screen and (min-width: 988px) {
+  nav.navigation {
+    display: flex;
+    justify-content: flex-end;
+  }
+  nav.navigation a {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    color: $fuchsia;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .toggleBox {
+    display: none;
+  }
+}
+
+// .navbar {
+//   height: 64px;
+//   background: rgb(50, 50, 50);
+//   background: linear-gradient(180deg, #323232cd 0%, #dddddd 100%);
+//   overflow: hidden;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }
+
+// .navbar-brand {
+//   display: flex;
+//   align-items: center;
+// }
+
+// .logo {
+//   max-height: 64px; // Maintain the navbar's height
+//   object-fit: contain; // Preserve the logo's aspect ratio
+// }
+
+// .navbar-burger span {
+//   background: $greyed-out;
+// }
 
 .card,
 .input {
@@ -62,4 +153,78 @@ form .label {
 
 form button {
   color: $white;
+}
+
+//titles styles
+h1,
+h2 {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: $greyed-out;
+}
+
+h3 {
+  color: $orange;
+  font-weight: bold;
+  font-size: 25px;
+}
+//Footer styles
+.footer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: $grey;
+}
+.footer_logo img {
+  height: auto;
+  width: 15rem;
+}
+.footer_logo {
+  text-align: center;
+  margin: 1em 1em;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  @media screen and (max-width: 653px) {
+    flex-direction: column;
+  }
+}
+
+ul li,
+p {
+  color: $black;
+}
+
+.privacy {
+  text-align: center;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+.icons i {
+  width: 33.33%;
+  height: auto;
+  border-radius: 0.1rem;
+  text-align: center;
+}
+
+.box-a a {
+  color: $black;
+}
+
+.box-a a:hover {
+  text-decoration: underline;
+}
+
+i {
+  color: $fuchsia;
 }
